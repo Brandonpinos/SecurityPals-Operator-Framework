@@ -11,15 +11,15 @@ Security Provider: No
 Self-assessment link (before PR): 
 
 ### Tasks
-- [ ] Stage 1: Preparation
-   - [ ] Create a GitHub issue for the security self assessment of Operator Framework SDK project.
-      - [ ] Issue Link in CNCF Tag-Security: <link>
-   - [ ] Create a place holder of security self assessment.
+- [x] Stage 1: Preparation
+   - [x] Create a GitHub issue for the security self assessment of Operator Framework SDK project.
+      - [x] Issue Link in CNCF Tag-Security: https://github.com/cncf/tag-security/issues/1137
+   - [x] Create a place holder of security self assessment.
       - [x] Create a fork of the CNCF Tag-Security in your Github.
       - [x] Create a new folder for the Operator Framework SDK project.
       - [x] Add the security self assessment template under the project folder.
-      - [x] Issue link of Initial Commit:
-   - [ ] Review Documentation of the Operator Framework SDK project.
+      - [x] Issue link of Initial Commit: https://github.com/cncf/tag-security/commit/f6a0a31ff4b31e74243ed1f854403a7304e1e837
+   - [x] Review Documentation of the Operator Framework SDK project.
 - [ ]  Stage 2: Understand the Project Landscape
    - [ ] Understand the overall project at a sufficient level of detail.
    - [ ] Update overview section
