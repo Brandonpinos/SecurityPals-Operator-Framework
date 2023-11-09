@@ -1,27 +1,25 @@
 ### Details
-Project Name: <project_name>
+Project Name: **Operator Framework SDK**
 
-Github URL: <project_link>
+Github URL: https://github.com/operator-framework/operator-sdk
 
-CNCF project stage: <Sandbox preparing for Incubation / Incubation preparing for Graduation / Graduated>
-- Sandbox Proposal: <Github_issue_link>
-- Incubation Proposal: <Github_issue_link>
-- Graduation Proposal: <Github_issue_link>
+CNCF project stage: Incubation 
+- Incubation Proposal: [Request to present the Operator Framework to the TOC as an incubating project toc#303](https://github.com/cncf/toc/pull/303)
 
-Security Provider: <Yes / No>
+Security Provider: No
 
-Self-assessment link (before PR): [<project_name> Security Self-Assessment](<Forked_Github_Repo_link>)
+Self-assessment link (before PR): 
 
 ### Tasks
 - [ ] Stage 1: Preparation
-   - [ ] Create a GitHub issue for the security self assessment of <project_name> project.
+   - [ ] Create a GitHub issue for the security self assessment of Operator Framework SDK project.
       - [ ] Issue Link in CNCF Tag-Security: <link>
    - [ ] Create a place holder of security self assessment.
       - [ ] Create a fork of the CNCF Tag-Security in your Github.
-      - [ ] Create a new folder for the <project_name> project.
+      - [ ] Create a new folder for the Operator Framework SDK project.
       - [ ] Add the security self assessment template under the project folder.
       - [ ] Issue link of Initial Commit: <link>
-   - [ ] Review Documentation of the <project_name> project.
+   - [ ] Review Documentation of the Operator Framework SDK project.
 - [ ]  Stage 2: Understand the Project Landscape
    - [ ] Understand the overall project at a sufficient level of detail.
    - [ ] Update overview section
@@ -31,7 +29,7 @@ Self-assessment link (before PR): [<project_name> Security Self-Assessment](<For
       - [ ] **Goals** <br> commit: <commit_link>
       - [ ] **Non-Goals** <br> commit: <commit_link>
 - [ ]  Stage 3: First complete draft of the Self Assessment
-   - [ ] Document technical specifications of the <project_name> project.
+   - [ ] Document technical specifications of the Operator Framework SDK project.
       - [ ] **Self assessment use** <br> commit: <commit_link>
       - [ ] **Security functions and features** <br> commit: <commit_link>
       - [ ] **Project compliance** <br> commit: <commit_link>
@@ -41,8 +39,8 @@ Self-assessment link (before PR): [<project_name> Security Self-Assessment](<For
    - [ ] Complete the security self assessment draft.
 
 - [ ]  Stage 4: Iteration with the project
-   - [ ] Initiate discussion with <project_name> project maintainers.
-   - [ ] Incorporate inputs and feedback from <project_name> project maintainers.
+   - [ ] Initiate discussion with Operator Framework SDK project maintainers.
+   - [ ] Incorporate inputs and feedback from Operator Framework SDK project maintainers.
    - [ ] Document the findings.
 
 - [ ] Stage 5: Finalization
