@@ -4,7 +4,7 @@ Project Name: **Operator Framework SDK**
 Github URL: https://github.com/operator-framework/operator-sdk
 
 CNCF project stage: Incubation 
-- Incubation Proposal: [Request to present the Operator Framework to the TOC as an incubating project toc#303](https://github.com/cncf/toc/pull/303)
+- Incubation Proposal: https://github.com/cncf/toc/pull/303
 
 Security Provider: No
 
