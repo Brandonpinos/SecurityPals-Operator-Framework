@@ -105,6 +105,43 @@ Example:------------------------------------------------------------------------
 End of Example:----------------------------------------------------------------------------------
 
 
+The fourth part is about actions. This includes:
+- Details about how your actors act.
+- After documenting the Actors, it’s time to show what their Actions are. This is a high-level description of how the actors interact with each other.
+- If you have a more complex system, you may want to create a chart using a tool such as draw.io (the system used for the purpose of this demonstration has relatively low complexity, so the following example may be a bit overkill).
+- If you find another way to communicate this for your situation, do what you think will best aid your readers in understanding the actions
+
+
+Example:----------------------------------------------------------------------------------
+
+### Actions
+The Privateer Core will read the user config to determine which Raids are to be read, and customize the runtime behavior based on options such as loglevel.
+One at a time, Privateer will initialize Raids by calling the respective subprocess by name, based on user input. Each Raid subprocess will independently read the configuration file for information such as runtime customization or resource authentication values.
+The Privateer SDK enables each Raid to print and write logs or output for the execution. Upon completion of all Raids, Privateer will print a summary of the Raid results.
+![Flowchart of the actors discussed above](actors_actions.png)
+
+End of Example-----------------------------------------------------------------------------
+
+
+The fifth part is your project goals.This describes what your project intends to do, and what security considerations are intended.
+
+While the Overview and Background sections help establish the core features of the project, the Goals section should describe what the project intends to accomplish. This includes both the end user value and the security goals for the project.
+
+A way to start thinkng about what the security goals might be would be to think about the points where the software in question would do any of the following:
+- Touch the internet
+- Receive untrusted input
+- Handle sensitive data
+
+Example-------------------------------------------------------------------------------------
+
+### Goals
+The Privateer project intends to create an ecosystem of post-deployment validation tools that can be easily incorporated into any automation pipeline.
+In order to mitigate the risk of compromised open source dependencies, Privateer ensures that sensitive information stored within a configuration may be fully isolated between plugins ("Raids") when multiple implementations are executed simultaneously.
+
+
+End of example-------------------------------------------------------------------------------
+
+
 
 
 
