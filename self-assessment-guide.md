@@ -315,8 +315,7 @@ End of example------------------------------------------------------------------
 
 
 
-Appendix:
-Here are some elements you should include, according to CNCF’s TAG Security:
+The last section is the appendix. Here are some elements you should include, according to CNCF’s TAG Security:
 
 #### 1. Historical Vulnerabilities
 Include a list or summary of past vulnerabilities, complete with links for reference. If there have been no reported vulnerabilities, share any available data on your success rate in identifying issues during code reviews or automated testing.
