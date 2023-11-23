@@ -75,6 +75,7 @@ The overview statement is a basic summary of the project, and has multiple compo
 
 
 Example:-----------------------------------------------------------------------------------------
+
   ## Overview
   Privateer is a test harness that is specially designed to combine any number of validation test packs into a single runtime that will harmonize inputs, executions, and outputs. The Privateer SDK enables the creation of test plugins, nicknamed _raids_, which can be selected and executed by Privateer users one at a time or in groups.
 
@@ -88,6 +89,7 @@ Example:------------------------------------------------------------------------
   Historically, runtime validation tests are notoriously specific to the resource they're validating. While the validators are powerful, they typically only address a single use case.
   In situations where engineers need to validate a wide array of deployed resources, they must build a custom solution that incorporates the commands and configurations for each validation tool.
   Privateer seeks to remediate this problem by allowing validation tests to be built as "raids" which receive their configuration from the Privateer executable, and subsequently pass their outputs back to the Privateer. When multiple raids are executed by a user, only a single config is required, all executions log their status together, and the output will always be provided together in a matching format.
+
 
 End of Example:----------------------------------------------------------------------------------
 
