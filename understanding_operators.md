@@ -2,7 +2,9 @@
 
 The motivation behind creating this file is to help others understand what Kubernetes Operators are, in a simple and concise language.
 
+
 The descriptions are borrowed from [Techworld by Nana](https://www.youtube.com/watch?v=ha3LjlD6g7g), you could use this file as a readalong to the video to easily understand operators.
+
 
 ## Introduction to Stateful vs Stateless Applications
 
@@ -18,10 +20,11 @@ On the other hand, a **stateful application** is one that saves data about each 
 
 From a DevOps perspective, a stateful application will be more complex to deploy and maintain because you need to provide each instance with access to a persistent data store. Stateless applications are fully decoupled from their environment which typically makes them easier to containerize and scale in the cloud.
 
+
 Sources:
-(1) [10 Key Differences Between Stateful and Stateless - Spiceworks.](https://www.spiceworks.com/tech/cloud/articles/stateful-vs-stateless/)
-(2) [Stateless Over Stateful Applications | by Rachna Singhal - Medium.](https://medium.com/@rachna3singhal/stateless-over-stateful-applications-73cbe025f07)
-(3) [Stateful vs stateless - Red Hat.](https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless.)
-(4) [AWS Applications - Stateful vs. Stateless.](https://digitalcloud.training/stateful-vs-stateless-aws-applications/)
-(5) [Stateful vs Stateless Applications: How They Impact DevOps - How-To Geek.](https://www.howtogeek.com/devops/stateful-vs-stateless-applications-how-they-impact-devops/)
+- [10 Key Differences Between Stateful and Stateless - Spiceworks.](https://www.spiceworks.com/tech/cloud/articles/stateful-vs-stateless/)
+- [Stateless Over Stateful Applications | by Rachna Singhal - Medium.](https://medium.com/@rachna3singhal/stateless-over-stateful-applications-73cbe025f07)
+- [Stateful vs stateless - Red Hat.](https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless.)
+- [AWS Applications - Stateful vs. Stateless.](https://digitalcloud.training/stateful-vs-stateless-aws-applications/)
+- [Stateful vs Stateless Applications: How They Impact DevOps - How-To Geek.](https://www.howtogeek.com/devops/stateful-vs-stateless-applications-how-they-impact-devops/)
 
