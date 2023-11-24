@@ -6,7 +6,7 @@ The motivation behind creating this file is to help others understand what Kuber
 The descriptions are borrowed from [Techworld by Nana](https://www.youtube.com/watch?v=ha3LjlD6g7g), you could use this file as a readalong to the video to easily understand operators.
 
 
-## Introduction to Stateful vs Stateless Applications
+### Introduction to Stateful vs Stateless Applications
 
 
 The entire point of operators come in when managing stateful applications in Kubernetes. Hence, first, we ought to understand what are stateful and stateless applications.
@@ -43,4 +43,25 @@ However, for *stateful* applications, this is a bit more complicated. If one nee
 The problem is, there is no standard solution for all of this, given MySQL has its own way of updating things, Postgresql and Elasticsearch will have their own methods. This means, there needs to be a human *operator*, who has to synchronize all of these updates and pod replications to maintain the operations of the application. That, essentially, beats the entire purpose of using Kubernetes, which is supposed to automate the scaling process of application deployments.
 
 
+### What are operators?
+
+
+Now, the discussion of Operators come into the picture. Given:
+
+- Different forms of stateful applications require different methods of deployment to preserve the correct state.
+- There exist people who understand the business logic of each of these systems.
+
+Kubernetes users have contributed to creating *Operators* to standardize specific stateful applications that replace the manual labor of maintaining the state of that specific application.
+
+
+These operators have the knowledge of:
+- How to deploy that particular application (Postgresql, MySQL, etc.)
+- How to create a cluster of multiple replicas of that operation.
+- How to recover in case a pod dies.
+- And so on...
+
+Essentially, it is a custom control loop for stateful applications, that Kubernetes does not natively provide.
+
+
+Given the open-source nature of Kubernetes, we've seen a lot of operators made by users that are made public. [OperatorHub.io](https://operatorhub.io/) is a great source for pre-built operators. You could also create your own operator for your specific use case. [OperatorSDK](https://github.com/operator-framework/operator-sdk) is a tool for people who wish to create their own operators, which is a part of the project we'd be doing the security self-assessment for.
 
