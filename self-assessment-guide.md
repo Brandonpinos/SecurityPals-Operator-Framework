@@ -2,8 +2,12 @@
 ### Course Code: LFEL1005
 The content of this guide has been taken from the Linux Foundation course on "Security Self-Assessments for Open Source Projects"
 For more information: [click here](https://training.linuxfoundation.org/express-learning/security-self-assessments-for-open-source-projects-lfel1005/)
-The examples are rudimentary and only offers a simple guide. For more thorough examples, look at the following 
 
+The examples are rudimentary and only offers a simple guide. For more thorough examples, look at the following (thanks to Brandon Pinos for providing me with these)
+- [Karmada](https://github.com/cncf/tag-security/blob/a3fee9600658149e6a4d4051425f6e473e05b226/assessments/projects/karmada/self-assessment.md)
+- [Kyverno](https://github.com/cncf/tag-security/blob/a3fee9600658149e6a4d4051425f6e473e05b226/assessments/projects/kyverno/self-assessment.md)
+- [OPA](https://github.com/cncf/tag-security/blob/a3fee9600658149e6a4d4051425f6e473e05b226/assessments/projects/opa/self-assessment.md)
+- [Pixie](https://github.com/cncf/tag-security/blob/a3fee9600658149e6a4d4051425f6e473e05b226/assessments/projects/pixie/self-assessment.md)
 
 A security self-assessment is a process that helps you understand your current security situation. It's like taking a good look at your security measures and figuring out what's working and what needs to be improved. This process is beneficial because:
 
