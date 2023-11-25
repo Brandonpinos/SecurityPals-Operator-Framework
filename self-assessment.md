@@ -34,10 +34,11 @@ A table at the top for quick reference information, later used for indexing.
 
 |   |  |
 | -- | -- |
-| Software | [Operator-SDK.](https://github.com/operator-framework/operator-sdk)  |
+| Software | [https://github.com/operator-framework/operator-sdk](https://github.com/operator-framework/operator-sdk)  |
+| Website | [https://sdk.operatorframework.io/](https://sdk.operatorframework.io/) |
 | Security Provider | No. The main goal is to bootstrap the creation of custom operators, not perform the role of a security provider.  |
 | Languages | Go, Ansible, Helm |
-| SBOM | Software bill of materials.  Link to the libraries, packages, versions used by the project, may also include direct dependencies. |
+| SBOM | < *Software bill of materials.  Link to the libraries, packages, versions used by the project, may also include direct dependencies.* > |
 | | |
 
 ### Security links
