@@ -1,5 +1,3 @@
-Sure, I'd be happy to explain in more depth.
-
 When you create a Kubernetes operator, you're essentially creating an automated process that interacts with the Kubernetes API on your behalf. This operator needs certain permissions to interact with the resources it manages. These permissions are defined in the operator's **Role-Based Access Control (RBAC)** rules¹².
 
 There are two types of classification for Operators:
