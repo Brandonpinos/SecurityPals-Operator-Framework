@@ -128,19 +128,19 @@ They also do not cover every aspect of deployment of applications. They mainly f
 
 ## Self-assessment use
 
-This self-assessment is created by the [project] team to perform an internal analysis of the
-project's security.  It is not intended to provide a security audit of [project], or
-function as an independent assessment or attestation of [project]'s security health.
+This self-assessment is created by the Security Pals team to perform an internal analysis of the
+project's security.  It is not intended to provide a security audit of Security Pals, or
+function as an independent assessment or attestation of Security Pals's security health.
 
-This document serves to provide [project] users with an initial understanding of
-[project]'s security, where to find existing security documentation, [project] plans for
-security, and general overview of [project] security practices, both for development of
-[project] as well as security of [project].
+This document serves to provide Security Pals users with an initial understanding of
+Security Pals's security, where to find existing security documentation, Security Pals plans for
+security, and general overview of Security Pals security practices, both for development of
+Security Pals as well as security of Security Pals.
 
-This document provides the CNCF TAG-Security with an initial understanding of [project]
+This document provides the CNCF TAG-Security with an initial understanding of Security Pals
 to assist in a joint-assessment, necessary for projects under incubation.  Taken
 together, this document and the joint-assessment serve as a cornerstone for if and when
-[project] seeks graduation and is preparing for a security audit.
+Security Pals seeks graduation and is preparing for a security audit.
 
 ## Security functions and features
 
