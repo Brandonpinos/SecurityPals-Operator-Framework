@@ -144,11 +144,19 @@ together, this document and the joint-assessment serve as a cornerstone for if a
 
 ## Security functions and features
 
-* Critical.  A listing critical security components of the project with a brief
-description of their importance.  It is recommended these be used for threat modeling.
-These are considered critical design elements that make the product itself secure and
-are not configurable.  Projects are encouraged to track these as primary impact items
-for changes to the project.
+### Critical
+
+#### Operator SDK
+The user is not allowed to modify the underlying logic for scaffolding, testing and deployment as they define the metadata and other manifests for the operator. It also performs validation checks on the Operator's code, bundle, and catalog, and the user cannot bypass these checks.
+
+#### Operator Lifecycle Manager (OLM)
+The user is only allowed to specify the desired state of the operators, and OLM reconciles the actual state and the desired state without any user intervention in the OLM reconciliation logic.
+
+#### Operator Registry 
+The user only specifies the Operator bundle and catalog metadata, while the registry automatically generates the necessary manifests and indexes. Manual modification of the registry's manifest generation/indexing logic is not allowed, and it is implemented internally by the OPM tool and the registry server. The registry also performs validation checks on the operator bundle before adding them to the registry so that no error impacts the Operator installation/update, and the user is not allowed to bypass these checks to ensure proper functioning. 
+
+
+### Security Relevant
 * Security Relevant.  A listing of security relevant components of the project with
   brief description.  These are considered important to enhance the overall security of
 the project, such as deployment configurations, settings, etc.  These should also be
