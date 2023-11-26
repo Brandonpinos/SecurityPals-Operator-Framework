@@ -146,6 +146,12 @@ Security Pals seeks graduation and is preparing for a security audit.
 
 ### Critical
 
+| Component | Applicability | Description of Importance |
+| --------- | ------------- | ------------------------- |
+| Hashicorp Go-Plugin | Critical | The `Go-Plugin` component enables Privateer to segment Raids as fully independent processes that communicate with the core via RPC on a local network, thereby allowing plugins to operate side-by-side without opportunity for configuration collision or side-channeling. |
+| YAML Configuration | Relevant | The YAML configuration handling enables Privateer to safely read user configuration and secrets across multiple Raid executions while encrypting or masking them when appropriate |
+
+
 #### Operator SDK
 The user is not allowed to modify the underlying logic for scaffolding, testing and deployment as they define the metadata and other manifests for the operator. It also performs validation checks on the Operator's code, bundle, and catalog, and the user cannot bypass these checks.
 
