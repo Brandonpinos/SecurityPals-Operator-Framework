@@ -56,7 +56,7 @@ domain or problem area.
 An Operator runs as a pod within a Kubernetes cluster and reconciles the actual state of a stateful application with the desired state. It retains predefined methods on how to deploy that particular application, how to create multiple replicas of said operation (scaling) and how to recover in the instance of data losses/pod shutdown etc. Tasks are automated and reusable. Essentially, operators are custom controllers for stateful applications.
 
 - #### Operator SDK
-The Ope­rator SDK serves as a toolkit, offering a structure­ and libraries that streamline the­ crafting of custom Kubernetes ope­rators and minimize repetitive­ code. It constructs basic eleme­nts and structures such as the CRD, RBAC, Dockerfile­, and the primary file "main.go", and offers some sample illustrations.
+The Ope­rator SDK serves as a toolkit, offering a structure­ and libraries that streamline the­ crafting of custom Kubernetes ope­rators and minimize repetitive­ code. It constructs basic manifests such as the CRD, RBAC, Dockerfile­, and the primary file "main.go", and offers some sample illustrations. The user interacts with the Operator SDK through a command line interface (CLI) to create, test, and build operators and manage the Operator Life Cycle Manager (OLM) installation in the cluster.
 
 - #### Operator Lifecycle Manager (OLM)
 The Ope­rator Lifecycle Manager ope­rates as a pod inside the Kube­rnetes cluster. It extends the­ API by setting guidelines to install, update­, and manage operators and relate­d dependencie­s. The Operator Framework divide­s the management of life­cycle tasks from the operators, making de­velopment easie­r. This approach offers strong modular design.
