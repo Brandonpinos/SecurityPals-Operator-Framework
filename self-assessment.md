@@ -82,6 +82,14 @@ This step could involve either running the operator locally for testing purposes
 
 If the user wishes to run the operator locally, they can use the CLI to connect to a cluster and run the operator on their machine. Either of these would result in the operator pod registering a controller for the custom resource and watch for events. This step involves reading and writing to the Kubernetes API to manage it's custom resources, and therefore could potentially be vulnerable if not implemented correctly. The Kubernetes API server validates the service account's permission against the role bindings before allowing the operator to manipulate the cluster for added security.
 
+- #### Packaging an operator
+Packaging is essentially bunding the operator's metadata, manifests and dependencies. The bundle includes:
+  - The metadata with information such as the name, description, maintainer, capabilities, dependencies and so on.
+  - CRD, CSV and all the other manifests required to run the operator, for example the RBAC file, webhooks, etc.
+  - A bundle.Dockerfile that specifies how to build the bundle image.
+The user can use the CLI to generate the bundle directory, validate it's contents and build the bundle image. The validation involves checking the CRDs, CSV, and the other manifests, ensuring that the components adhere to the required specifications. The Operator SDK does not handle encryptions or secure connections during the packaging and pushing the bundle image onto the container registry, as it is typically handled by the registry itself.
+
+
 
 ### Goals
 The intended goals of the projects including the security guarantees the project
