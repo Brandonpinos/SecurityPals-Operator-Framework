@@ -70,24 +70,30 @@ Operator Framework is a solution to this problem along with providing several be
 ### Actors
 Operator Framework is comprised of a few different parts including, 
 
-Operator Framework SDK : The framework used to build and package Operators. Using Operator SDK allows developers to easily automate and manage any Operators they create.
+#### Operator Framework SDK
+The framework used to build and package Operators. Using Operator SDK allows developers to easily automate and manage any Operators they create. It constructs basic manifests such as the CRD, RBAC, Dockerfile­, and the primary file "main.go", and offers some sample illustrations. The user interacts with the Operator SDK through a command line interface (CLI) to create, test, and build operators and manage the Operator Life Cycle Manager (OLM) installation in the cluster.
 
-Operator Lifecycle Manager (OLM) : Contains two parts, Operator OLM and Catalog Operator. Both provides the runtime environment and APIs for managing the lifecycle of Operators and their resources. It also helps in deploying, installing, and updating Operators. Operator OLM is for manually created Operators and Catalog Operator is for Operators taken from Operater Hub.
+#### Operator Lifecycle Manager (OLM) 
+Contains two parts, Operator OLM and Catalog Operator. Both provides the runtime environment and APIs for managing the lifecycle of Operators and their resources. It also helps in deploying, installing, and updating Operators. Operator OLM is for manually created Operators and Catalog Operator is for Operators taken from Operater Hub. 
 
-Operator Hub : A community-driven public hub for sharing and discovering Operators for various uses.
+#### Operator Registry
+The Operator Registry is essentially a gRPC API that provides the OLM with operator bundle data, allowing querying of these operator bundles. It provides several binaries, including ```opm```(which updates registry databases and the index images), ```initializer```(which takes operator manifests as inputs and outputs SQLite database with the data allowing querying), and many more.
+
+#### Operator Hub
+A community-driven public hub for sharing and discovering Operators for various uses.
 
 These components make up Operator Framework and make it very useful for developing, deploying and managing Operators.
 
-
 ### Actions
-Creating an Operator using Operator Framework SDK:
+
+#### Creating an Operator using Operator Framework SDK
 1. Create new project operator using the SDK Command Line Interface
 2. Define resource APis by adding Custom Resource Definitions
 3. Define controllers
 4. Write reconciling logic for controllers using SDK and APIs
 5. Use the SDK Command Line Interface to generate the operator deployment manifests
 
-Installing and Managing an Operator using Operator Framework Operator Lifecycle Manage (OLM):
+#### Installing and Managing an Operator using Operator Framework Operator Lifecycle Manage (OLM)
 1. Use Operator OLM to manually create Operator
   OR
 1. Use Catalog Operator to create Operator from OperaterHub
