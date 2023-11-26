@@ -60,6 +60,8 @@ between the database and front-end is not relevant.
 The means by which actors are isolated should also be described, as this is often
 what prevents an attacker from moving laterally after a compromise.
 
+
+
 ### Actions
 These are the steps that a project performs in order to provide some service
 or functionality.  These steps are performed by different actors in the system.
