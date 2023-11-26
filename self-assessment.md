@@ -87,11 +87,12 @@ These components make up Operator Framework and make it very useful for developi
 ### Actions
 
 #### Creating an Operator using Operator Framework SDK
-1. Create new project operator using the SDK Command Line Interface
+1. Create new project operator using the SDK Command Line Interface (CLI)
 2. Define resource APis by adding Custom Resource Definitions
 3. Define controllers
 4. Write reconciling logic for controllers using SDK and APIs
-5. Use the SDK Command Line Interface to generate the operator deployment manifests
+5. Using the SDK CLI, define webhooks for the custom resource, e.g., validating/mutating webhooks if necessary.
+6. Use the SDK Command Line Interface to generate the operator deployment manifest
 
 #### Installing and Managing an Operator using Operator Framework Operator Lifecycle Manage (OLM)
 1. Use Operator OLM to manually create Operator
