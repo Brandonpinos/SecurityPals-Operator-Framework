@@ -34,10 +34,10 @@ A table at the top for quick reference information, later used for indexing.
 
 |   |  |
 | -- | -- |
-| Software | A link to the software’s repository.  |
-| Security Provider | Yes or No. Is the primary function of the project to support the security of an integrating system?  |
-| Languages | languages the project is written in |
-| SBOM | Software bill of materials.  Link to the libraries, packages, versions used by the project, may also include direct dependencies. |
+| Software | [Operator Framework](https://github.com/operator-framework/operator-sdk)  |
+| Security Provider | No  |
+| Languages | Go, Ansible, Python, C++ |
+| SBOM | [git](https://git-scm.com/downloads), [go.mod](https://github.com/operator-framework/operator-sdk/blob/master/go.mod), [go.sum](https://github.com/operator-framework/operator-sdk/blob/master/go.sum), [Kubernetes](https://github.com/kubernetes/kubernetes), |
 | | |
 
 ### Security links
@@ -46,52 +46,78 @@ Provide the list of links to existing security documentation for the project. Yo
 use the table below as an example:
 | Doc | url |
 | -- | -- |
-| Security file | https://my.security.file |
-| Default and optional configs | https://example.org/config |
+| Security file | https://github.com/operator-framework/operator-sdk/blob/master/SECURITY.md |
+| Default and optional configs | https://github.com/operator-framework/operator-sdk/blob/master/config/crd/bases/_.yaml |
 
 ## Overview
 
-One or two sentences describing the project -- something memorable and accurate
-that distinguishes your project to quickly orient readers who may be assessing
-multiple projects.
+Operator Framework is an open-source toolkit that provides the runtime environment and software development kit (SDK) for building and running Kubernetes applications, dubbed “Operators”, in an effective and easily scalable way.
+
+The SDK is a framework that allows developers to build and manipulate Operators without prior knowledge of the complexities of Kubernetes API. By providing libraries and tools, developers can use familiar languages to streamline the process.
 
 ### Background
 
-Provide information for reviewers who may not be familiar with your project's
-domain or problem area.
+Streamlining processes for consumers, workers, and industries in general is often of utmost importance. It saves time, money, and headaches for everyone involved. When it comes to installing a piece of software, most expect it to be simple with only a few clicks involved, the same applies to updates and upgrades for that software. However every machine is different and each application has numerous dependencies that are necessary to run it correctly.To expect consumers or people who are not as proficient with technology to install the correct one from slightly different variations would be nonsensical.
+
+Containerization solves this problem. Containerization is the process of packaging an application with all its dependencies into a single, self-contained unit called a container. This would include the application code, source tools, runtime libraries, and more. By providing an isolated environment, this ensures that the application would be consistent in running on multiple different machines, regardless of the individual conditions.Containerization allows for ease of use, portability, scalability, and efficient deployment of applications.
+
+A developer team seeking to utilize these benefits for their application would find Kubernetes very helpful. Kubernetes is an open source containerization platform that automates application deployment, updates, and overall management. It provides the container infrastructure and allows developers to define their application requirements. These reasons alone with a host of other benefits would be a great help to any development team.
+
+However, setting up and configuring Kubernetes clusters can pose a challenge for developers unfamiliar with Kubernetes. It requires an in-depth understanding of networking, infrastructure, and storage concepts. These are significant learning curves that create a “threshold filter” of sorts that leads developers to deciding on a different alternative to Kubernetes. 
+
+Operator Framework is a solution to this problem along with providing several benefits that Kubernetes does not natively supply. Operator Framework allows developers to build Operators with languages and libraries that they are already familiar with. Operators built with Operator Framework allow for even more options for automation of tasks and workflows beyond the basic functionalities provided by Kubernetes. Overall Operator Framework complements the benefits that Kubernetes offers by providing the specialized tools for easier learning for developers, better automation, and better scalability making Kubernetes an easier and more powerful tool.
 
 ### Actors
-These are the individual parts of your system that interact to provide the 
-desired functionality.  Actors only need to be separate, if they are isolated
-in some way.  For example, if a service has a database and a front-end API, but
-if a vulnerability in either one would compromise the other, then the distinction
-between the database and front-end is not relevant.
+Operator Framework is comprised of a few different parts including, 
 
-The means by which actors are isolated should also be described, as this is often
-what prevents an attacker from moving laterally after a compromise.
+Operator Framework SDK : The framework used to build and package Operators. Using Operator SDK allows developers to easily automate and manage any Operators they create.
+
+Operator Lifecycle Manager (OLM) : Contains two parts, Operator OLM and Catalog Operator. Both provides the runtime environment and APIs for managing the lifecycle of Operators and their resources. It also helps in deploying, installing, and updating Operators. Operator OLM is for manually created Operators and Catalog Operator is for Operators taken from Operater Hub.
+
+Operator Hub : A community-driven public hub for sharing and discovering Operators for various uses.
+
+These components make up Operator Framework and make it very useful for developing, deploying and managing Operators.
+
 
 ### Actions
-These are the steps that a project performs in order to provide some service
-or functionality.  These steps are performed by different actors in the system.
-Note, that an action need not be overly descriptive at the function call level.  
-It is sufficient to focus on the security checks performed, use of sensitive 
-data, and interactions between actors to perform an action.  
+Creating an Operator using Operator Framework SDK:
+1. Create new project operator using the SDK Command Line Interface
+2. Define resource APis by adding Custom Resource Definitions
+3. Define controllers
+4. Write reconciling logic for controllers using SDK and APIs
+5. Use the SDK Command Line Interface to generate the operator deployment manifests
 
-For example, the access server receives the client request, checks the format, 
-validates that the request corresponds to a file the client is authorized to 
-access, and then returns a token to the client.  The client then transmits that 
-token to the file server, which, after confirming its validity, returns the file.
+Installing and Managing an Operator using Operator Framework Operator Lifecycle Manage (OLM):
+1. Use Operator OLM to manually create Operator
+  OR
+1. Use Catalog Operator to create Operator from OperaterHub
+
+Operator OLM
+1. Watches for the ClusterServiceVersion (CSV) in a namspace and checks to make sure the requirements are met
+2. If requirements are met, the install strategy is ran
+
+Catalog Operator
+1. Holds a cache of CSVs and CRDs.
+2. Watches for InstallPlans set by user
+3. If one is found, finds the matching name and adds as a resource, else 7b
+4. For each managed CRD, adds as a resolved resource
+5. For each resolved CRD, finds the managing CSV
+6. Watches for resolved InstallPlans and creates resources for them
+7. Watches for subscriptions to Operators in Catalog, and creates InstallPlans for them
 
 ### Goals
-The intended goals of the projects including the security guarantees the project
- is meant to provide (e.g., Flibble only allows parties with an authorization
-key to change data it stores).
+The goals of Operator Framework are mainly to simplify and enhance applications  on Kubernetes clusters. 
+
+It does this by using the Operator SDK to simplify creation and automation of Operators. This thoroughly increases developer productivity.
+
+Operator Framework also enhances the reliability of complex applications by allowing them to declare specific configurations to make sure the application is always running as desired. This would in turn reduce possible downtime and making it easier for the responsible department
+
+For security guarantees, Operator Framework uses the same principles as Kubernetes such as Role-Based Access Control so that applications cannot act outside of the scope provided. This along with other network isolation policies ensures the security aspect. 
 
 ### Non-goals
-Non-goals that a reasonable reader of the project’s literature could believe may
-be in scope (e.g., Flibble does not intend to stop a party with a key from storing
-an arbitrarily large amount of data, possibly incurring financial cost or overwhelming
- the servers)
+Although Operator Framework enhances many basic features of Kubernetes, as a result it also shares some of the same non-goals. The logging and monitoring, although provided, are basic as they are not meant to be a replacement for fully comprehensive security logging and monitoring alternatives.
+
+They also do not cover every aspect of deployment of applications. They mainly focus on the lifecycle of the Operator itself. This includes the deployment, upgrading, and scaling of Operators while leaving out other aspects of deployment like storage and networking.
 
 ## Self-assessment use
 
