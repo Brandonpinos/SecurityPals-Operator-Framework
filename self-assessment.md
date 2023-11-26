@@ -51,14 +51,24 @@ Provide information for reviewers who may not be familiar with your project's
 domain or problem area.
 
 ### Actors
-These are the individual parts of your system that interact to provide the 
-desired functionality.  Actors only need to be separate, if they are isolated
-in some way.  For example, if a service has a database and a front-end API, but
-if a vulnerability in either one would compromise the other, then the distinction
-between the database and front-end is not relevant.
 
-The means by which actors are isolated should also be described, as this is often
-what prevents an attacker from moving laterally after a compromise.
+- #### Operator
+An Operator runs as a pod within a Kubernetes cluster and reconciles the actual state of a stateful application with the desired state. It retains predefined methods on how to deploy that particular application, how to create multiple replicas of said operation (scaling) and how to recover in the instance of data losses/pod shutdown etc. Tasks are automated and reusable. Essentially, operators are custom controllers for stateful applications.
+
+- #### Operator SDK
+The Ope­rator SDK serves as a toolkit, offering a structure­ and libraries that streamline the­ crafting of custom Kubernetes ope­rators and minimize repetitive­ code. It constructs basic eleme­nts and structures such as the CRD, RBAC, Dockerfile­, and the primary file "main.go", and offers some sample illustrations.
+
+- #### Operator Lifecycle Manager (OLM)
+The Ope­rator Lifecycle Manager ope­rates as a pod inside the Kube­rnetes cluster. It extends the­ API by setting guidelines to install, update­, and manage operators and relate­d dependencie­s. The Operator Framework divide­s the management of life­cycle tasks from the operators, making de­velopment easie­r. This approach offers strong modular design.
+
+
+- #### Operator Registry
+The Operator Registry is essentially a gRPC API that provides the OLM with operator bundle data, allowing querying of these operator bundles. It provides several binaries, including ```opm```(which updates registry databases and the index images), ```initializer```(which takes operator manifests as inputs and outputs SQLite database with the data allowing querying), and many more.
+
+- #### OperatorHub
+A website that allows users to browse, search and install relevant operators that are made publicly available.
+
+
 
 
 
