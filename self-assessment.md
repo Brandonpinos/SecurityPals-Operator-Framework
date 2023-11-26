@@ -1,15 +1,4 @@
-# Self-assessment
-The Self-assessment is the initial document for projects to begin thinking about the
-security of the project, determining gaps in their security, and preparing any security
-documentation for their users. This document is ideal for projects currently in the
-CNCF **sandbox** as well as projects that are looking to receive a joint assessment and
-currently in CNCF **incubation**.
-
-For a detailed guide with step-by-step discussion and examples, check out the free 
-Express Learning course provided by Linux Foundation Training & Certification: 
-[Security Assessments for Open Source Projects](https://training.linuxfoundation.org/express-learning/security-self-assessments-for-open-source-projects-lfel1005/).
-
-# Self-assessment outline
+# Operator-SDK Security Self-Assessment
 
 ## Table of contents
 
@@ -34,10 +23,11 @@ A table at the top for quick reference information, later used for indexing.
 
 |   |  |
 | -- | -- |
-| Software | A link to the software’s repository.  |
-| Security Provider | Yes or No. Is the primary function of the project to support the security of an integrating system?  |
-| Languages | languages the project is written in |
-| SBOM | Software bill of materials.  Link to the libraries, packages, versions used by the project, may also include direct dependencies. |
+| Software | [https://github.com/operator-framework/operator-sdk](https://github.com/operator-framework/operator-sdk)  |
+| Website | [https://sdk.operatorframework.io/](https://sdk.operatorframework.io/) |
+| Security Provider | No. The main goal is to bootstrap the creation of custom operators, not perform the role of a security provider.  |
+| Languages | Go, Ansible, Helm |
+| SBOM | < *Software bill of materials.  Link to the libraries, packages, versions used by the project, may also include direct dependencies.* > |
 | | |
 
 ### Security links
@@ -46,8 +36,8 @@ Provide the list of links to existing security documentation for the project. Yo
 use the table below as an example:
 | Doc | url |
 | -- | -- |
-| Security file | https://my.security.file |
-| Default and optional configs | https://example.org/config |
+| Security file | [https://github.com/operator-framework/operator-sdk/blob/master/SECURITY.md](https://github.com/operator-framework/operator-sdk/blob/master/SECURITY.md) |
+| Default and optional configs | ... |
 
 ## Overview
 
@@ -61,26 +51,60 @@ Provide information for reviewers who may not be familiar with your project's
 domain or problem area.
 
 ### Actors
-These are the individual parts of your system that interact to provide the 
-desired functionality.  Actors only need to be separate, if they are isolated
-in some way.  For example, if a service has a database and a front-end API, but
-if a vulnerability in either one would compromise the other, then the distinction
-between the database and front-end is not relevant.
 
-The means by which actors are isolated should also be described, as this is often
-what prevents an attacker from moving laterally after a compromise.
+- #### Operator
+An Operator runs as a pod within a Kubernetes cluster and reconciles the actual state of a stateful application with the desired state. It retains predefined methods on how to deploy that particular application, how to create multiple replicas of said operation (scaling) and how to recover in the instance of data losses/pod shutdown etc. Tasks are automated and reusable. Essentially, operators are custom controllers for stateful applications.
+
+- #### Operator SDK
+The Ope­rator SDK serves as a toolkit, offering a structure­ and libraries that streamline the­ crafting of custom Kubernetes ope­rators and minimize repetitive­ code. It constructs basic manifests such as the CRD, RBAC, Dockerfile­, and the primary file "main.go", and offers some sample illustrations. The user interacts with the Operator SDK through a command line interface (CLI) to create, test, and build operators and manage the Operator Life Cycle Manager (OLM) installation in the cluster.
+
+- #### Operator Lifecycle Manager (OLM)
+The Ope­rator Lifecycle Manager ope­rates as a pod inside the Kube­rnetes cluster. It extends the­ API by setting guidelines to install, update­, and manage operators and relate­d dependencie­s. The Operator Framework divide­s the management of life­cycle tasks from the operators, making de­velopment easie­r. This approach offers strong modular design.
+
+
+- #### Operator Registry
+The Operator Registry is essentially a gRPC API that provides the OLM with operator bundle data, allowing querying of these operator bundles. It provides several binaries, including ```opm```(which updates registry databases and the index images), ```initializer```(which takes operator manifests as inputs and outputs SQLite database with the data allowing querying), and many more.
+
+- #### OperatorHub
+A website that allows users to browse, search and install relevant operators that are made publicly available.
+
+
+
+
 
 ### Actions
-These are the steps that a project performs in order to provide some service
-or functionality.  These steps are performed by different actors in the system.
-Note, that an action need not be overly descriptive at the function call level.  
-It is sufficient to focus on the security checks performed, use of sensitive 
-data, and interactions between actors to perform an action.  
 
-For example, the access server receives the client request, checks the format, 
-validates that the request corresponds to a file the client is authorized to 
-access, and then returns a token to the client.  The client then transmits that 
-token to the file server, which, after confirming its validity, returns the file.
+- #### Building an Operator
+```operator-sdk create``` allows users to either generate the scaffold of a Kubernetes API–allowing users to generate basic manifests required to define a new API–or a webhook for an API resource–allowing users to handle HTTP requests following specified events. The necessary manifests include the CRD, the RBAC rules, and operator deployment. The Operator SDK validate's the operator's service account against the RBAC manifest to determine whether the operator has the requisite permissions. The user implements the reconciliation logic for the control loop in this phase that will dictate how the operator handles the conflict between desired and actual state of the custom resource. Once the operator image is built, the user can also use the CLI to push it to a container registry, so that it can be available for deployment on a Kubernetes cluster whenever necessary.
+
+- #### Running an operator
+This step could involve either running the operator locally for testing purposes or the actual deployment to a cluster. The CLI/Kubectl allows the user to apply the manifests generated and modified in the previous step, creating the service account, role, role binding and deployment of the operator in the cluster.
+
+If the user wishes to run the operator locally, they can use the CLI to connect to a cluster and run the operator on their machine. Either of these would result in the operator pod registering a controller for the custom resource and watch for events. This step involves reading and writing to the Kubernetes API to manage it's custom resources, and therefore could potentially be vulnerable if not implemented correctly. The Kubernetes API server validates the service account's permission against the role bindings before allowing the operator to manipulate the cluster for added security.
+
+- #### Packaging an operator
+Packaging is essentially bunding the operator's metadata, manifests and dependencies. The bundle includes:
+  - The metadata with information such as the name, description, maintainer, capabilities, dependencies and so on.
+  - CRD, CSV and all the other manifests required to run the operator, for example the RBAC file, webhooks, etc.
+  - A bundle.Dockerfile that specifies how to build the bundle image.
+
+The user can use the CLI to generate the bundle directory, validate it's contents and build the bundle image. The validation involves checking the CRDs, CSV, and the other manifests, ensuring that the components adhere to the required specifications. The Operator SDK does not handle encryptions or secure connections during the packaging and pushing the bundle image onto the container registry, as it is typically handled by the registry itself.
+
+- #### Operator Distribution
+Distributing the bundle represents publishing an operator bundle to a catalog, which acts like a library that stores different versions of various operators grouped by channels. Each channel represents a stream of updates for a given operator, and the update graph defines the upgrade path between the given versions of an operator within a channel. Using the Operator SDK CLI or the opm tool, the user can create a catalog, add or remove bundles, or manipulate channels and update graphs. Once the catalog is ready, the user can push the catalog image to an operator registry, making it available to the OLM through a CatalogSource object. Unauthorized or improper manipulation of the operator bundle data in this phase could harm the integrity and availability of the operators within the catalog.
+
+
+- #### Operator Installation
+This action requires the following steps:
+  - Creating a Subscription object in the OLM, referencing a CatalogSource object and a specified channel, i.e., querying for the catalog image. 
+  - OLM will then download the updated operator bundle matching the specified channel in the query.
+  - OLM also resolves and installs any requisite dependency for the operator, including CRDs, APIs and even other operators.
+  - An OperatorGroup object then is created by the OLM that defines the namespaces and service accounts for the operator, ensuring access validation.
+  - Finally, a ClusterServiceVersion (CSV) object is created by the OLM representing the operator's installation and status, i.e., the bundle information and operator's phase, message, reason, and conditions.
+
+The sensitive data exchange happens while reading the bundle data from the registry and writing to the Kubernetes API.
+
+
 
 ### Goals
 The intended goals of the projects including the security guarantees the project
