@@ -90,6 +90,8 @@ Packaging is essentially bunding the operator's metadata, manifests and dependen
 
 The user can use the CLI to generate the bundle directory, validate it's contents and build the bundle image. The validation involves checking the CRDs, CSV, and the other manifests, ensuring that the components adhere to the required specifications. The Operator SDK does not handle encryptions or secure connections during the packaging and pushing the bundle image onto the container registry, as it is typically handled by the registry itself.
 
+- #### Operator Distribution
+Distributing the bundle represents publishing an operator bundle to a catalog, which acts like a library that stores different versions of various operators grouped by channels. Each channel represents a stream of updates for a given operator, and the update graph defines the upgrade path between the given versions of an operator within a channel. Using the Operator SDK CLI or the opm tool, the user can create a catalog, add or remove bundles, or manipulate channels and update graphs. Once the catalog is ready, the user can push the catalog image to an operator registry, making it available to the OLM through a CatalogSource object. Unauthorized or improper manipulation of the operator bundle data in this phase could harm the integrity and availability of the operators within the catalog.
 
 
 ### Goals
