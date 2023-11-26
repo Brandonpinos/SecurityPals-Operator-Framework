@@ -94,6 +94,18 @@ The user can use the CLI to generate the bundle directory, validate it's content
 Distributing the bundle represents publishing an operator bundle to a catalog, which acts like a library that stores different versions of various operators grouped by channels. Each channel represents a stream of updates for a given operator, and the update graph defines the upgrade path between the given versions of an operator within a channel. Using the Operator SDK CLI or the opm tool, the user can create a catalog, add or remove bundles, or manipulate channels and update graphs. Once the catalog is ready, the user can push the catalog image to an operator registry, making it available to the OLM through a CatalogSource object. Unauthorized or improper manipulation of the operator bundle data in this phase could harm the integrity and availability of the operators within the catalog.
 
 
+- #### Operator Installation
+This action requires the following steps:
+  - Creating a Subscription object in the OLM, referencing a CatalogSource object and a specified channel, i.e., querying for the catalog image. 
+  - OLM will then download the updated operator bundle matching the specified channel in the query.
+  - OLM also resolves and installs any requisite dependency for the operator, including CRDs, APIs and even other operators.
+  - An OperatorGroup object then is created by the OLM that defines the namespaces and service accounts for the operator, ensuring access validation.
+  - Finally, a ClusterServiceVersion (CSV) object is created by the OLM representing the operator's installation and status, i.e., the bundle information and operator's phase, message, reason, and conditions.
+
+The sensitive data exchange happens while reading the bundle data from the registry and writing to the Kubernetes API.
+
+
+
 ### Goals
 The intended goals of the projects including the security guarantees the project
  is meant to provide (e.g., Flibble only allows parties with an authorization
