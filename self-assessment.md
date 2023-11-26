@@ -87,6 +87,7 @@ Packaging is essentially bunding the operator's metadata, manifests and dependen
   - The metadata with information such as the name, description, maintainer, capabilities, dependencies and so on.
   - CRD, CSV and all the other manifests required to run the operator, for example the RBAC file, webhooks, etc.
   - A bundle.Dockerfile that specifies how to build the bundle image.
+
 The user can use the CLI to generate the bundle directory, validate it's contents and build the bundle image. The validation involves checking the CRDs, CSV, and the other manifests, ensuring that the components adhere to the required specifications. The Operator SDK does not handle encryptions or secure connections during the packaging and pushing the bundle image onto the container registry, as it is typically handled by the registry itself.
 
 
