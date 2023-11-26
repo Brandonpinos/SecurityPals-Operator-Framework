@@ -74,10 +74,10 @@ A website that allows users to browse, search and install relevant operators tha
 
 ### Actions
 
-- **Building an Operator**
+- #### Building an Operator
 ```operator-sdk create``` allows users to either generate the scaffold of a Kubernetes API–allowing users to generate basic manifests required to define a new API–or a webhook for an API resource–allowing users to handle HTTP requests following specified events. The necessary manifests include the CRD, the RBAC rules, and operator deployment. The Operator SDK validate's the operator's service account against the RBAC manifest to determine whether the operator has the requisite permissions. The user implements the reconciliation logic for the control loop in this phase that will dictate how the operator handles the conflict between desired and actual state of the custom resource. Once the operator image is built, the user can also use the CLI to push it to a container registry, so that it can be available for deployment on a Kubernetes cluster whenever necessary.
 
-- **Running an operator**
+- #### Running an operator
 This step could involve either running the operator locally for testing purposes or the actual deployment to a cluster. The CLI/Kubectl allows the user to apply the manifests generated and modified in the previous step, creating the service account, role, role binding and deployment of the operator in the cluster.
 
 If the user wishes to run the operator locally, they can use the CLI to connect to a cluster and run the operator on their machine. Either of these would result in the operator pod registering a controller for the custom resource and watch for events. This step involves reading and writing to the Kubernetes API to manage it's custom resources, and therefore could potentially be vulnerable if not implemented correctly. The Kubernetes API server validates the service account's permission against the role bindings before allowing the operator to manipulate the cluster for added security.
