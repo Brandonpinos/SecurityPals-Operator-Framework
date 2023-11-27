@@ -236,6 +236,11 @@ All reported bugs, issues, and fixes can be viewed from [operator-framework/oper
 
 The project has [not been documented](https://www.bestpractices.dev/en/projects) to have achieved the passing level criteria for CII best practices.
 
+### Case Studies
+
+
+
+
 ### Related Projects
 
 - **Kubebuilder** is an SDK for creating Kubernetes APIs using CRDs and controllers, it is based on the controller-runtime library also used by the Operator SDK. The primary difference is that while the Kubebuilder focuses on building APIs and controllers, the Operator Framework provides additional tools for managing operator lifecycle and distributions. The Github repository is under active maintenance by the community.
