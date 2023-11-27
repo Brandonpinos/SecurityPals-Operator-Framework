@@ -174,11 +174,19 @@ Not applicable.
 
 ## Secure development practices
 
-* Development Pipeline.  A description of the testing and assessment processes that
-  the software undergoes as it is developed and built. Be sure to include specific
-information such as if contributors are required to sign commits, if any container
-images immutable and signed, how many reviewers before merging, any automated checks for
-vulnerabilities, etc.
+### Development Pipeline
+All Code is maintained in [Github](https://github.com/operator-framework) and changes are reviewed by maintainers
+* The Source Code is visible in the Github
+* Changes are submitted through Pull Requests
+* Pull Requests automatically have checks performed
+* Pull Requests are reviewed by maintainers
+* Merges are performed after passing checks and review by maintainer
+
+Operators employ several techniques that ensure their security and integrity
+* Operators follow the principle of least privelege, ensuring that they only access the necessary resources with the least amount of permissions.
+* Operators use secure communication channels such as SSH between various components to prevent eavesdropping or mishandling of information
+* Operators should employ a Role Based Access System to ensure that only the authorized users and services are allowed to perform actions in the Operator's lifecycle
+* Operators are expected to use Kubernetes Secrets objects rather than hardcoding for sensitive data.
 
 ### Communication Channels
 
