@@ -249,15 +249,15 @@ The project has [not been documented](https://www.bestpractices.dev/en/projects)
 
 
 
-* Known Issues Over Time. List or summarize statistics of past vulnerabilities
+Known Issues Over Time. List or summarize statistics of past vulnerabilities
   with links. If none have been reported, provide data, if any, about your track
-record in catching issues in code review or automated testing.
-* [CII Best Practices](https://www.coreinfrastructure.org/programs/best-practices-program/).
+ record in catching issues in code review or automated testing.
+ [CII Best Practices](https://www.coreinfrastructure.org/programs/best-practices-program/).
   Best Practices. A brief discussion of where the project is at
   with respect to CII best practices and what it would need to
   achieve the badge.
-* Case Studies. Provide context for reviewers by detailing 2-3 scenarios of
+  Case Studies. Provide context for reviewers by detailing 2-3 scenarios of
   real-world use cases.
-* Related Projects / Vendors. Reflect on times prospective users have asked
+Related Projects / Vendors. Reflect on times prospective users have asked
   about the differences between your project and projectX. Reviewers will have
 the same question.
