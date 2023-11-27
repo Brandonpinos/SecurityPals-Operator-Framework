@@ -149,35 +149,19 @@ Security Pals seeks graduation and is preparing for a security audit.
 | --------- | ------------- | ------------------------- |
 | Hashicorp Go-Plugin | Critical | The `Go-Plugin` component enables Privateer to segment Raids as fully independent processes that communicate with the core via RPC on a local network, thereby allowing plugins to operate side-by-side without opportunity for configuration collision or side-channeling. |
 | YAML Configuration | Relevant | The YAML configuration handling enables Privateer to safely read user configuration and secrets across multiple Raid executions while encrypting or masking them when appropriate |
-| Operator SDK | Critical/Relevant | Ensures the integrity and security of the underlying logic by restricting user modifications. Performs validation checks on the Operator's code, bundle, and catalog to prevent unauthorized changes and uphold the security posture of the Operator. |
-| Operator Lifecycle Manager (OLM) | Critical/Relevant | Enables users to specify desired states without direct intervention in OLM reconciliation logic. This separation of concerns enhances security by reducing the risk of user errors or malicious attempts to interfere with the reconciliation process.| 
-| Operator Registry | Critical/Relevant | Automates the generation of manifests and indexes while restricting user access to modification of critical manifest generation/indexing logic. Implements validation checks on Operator bundles, ensuring error-free installations/updates and bolstering overall security. | 
-
-### Critical
-
-#### Operator SDK
-The user is not allowed to modify the underlying logic for scaffolding, testing and deployment as they define the metadata and other manifests for the operator. It also performs validation checks on the Operator's code, bundle, and catalog, and the user cannot bypass these checks.
-
-#### Operator Lifecycle Manager (OLM)
-The user is only allowed to specify the desired state of the operators, and OLM reconciles the actual state and the desired state without any user intervention in the OLM reconciliation logic.
-
-#### Operator Registry 
-The user only specifies the Operator bundle and catalog metadata, while the registry automatically generates the necessary manifests and indexes. Manual modification of the registry's manifest generation/indexing logic is not allowed, and it is implemented internally by the OPM tool and the registry server. The registry also performs validation checks on the operator bundle before adding them to the registry so that no error impacts the Operator installation/update, and the user is not allowed to bypass these checks to ensure proper functioning. 
+| Operator SDK | Critical | Ensures the integrity and security of the underlying logic by restricting user modifications. Performs validation checks on the Operator's code, bundle, and catalog to prevent unauthorized changes and uphold the security posture of the Operator. |
+| Operator Lifecycle Manager (OLM) | Critical | Enables users to specify desired states without direct intervention in OLM reconciliation logic. This separation of concerns enhances security by reducing the risk of user errors or malicious attempts to interfere with the reconciliation process.| 
+| Operator Registry | Relevant | Automates the generation of manifests and indexes while restricting user access to modification of critical manifest generation/indexing logic. Implements validation checks on Operator bundles, ensuring error-free installations/updates and bolstering overall security. | 
 
 
 ### Security Relevant
-* Security Relevant.  A listing of security relevant components of the project with
-  brief description.  These are considered important to enhance the overall security of
-the project, such as deployment configurations, settings, etc.  These should also be
-included in threat modeling.
+By focusing on the following security-relevant components and features, the OpenShift Operator Framework maintains a robust security posture, reducing potential vulnerabilities and threats to the platform on Kubernetes environments.
 
 Deployment Configurations and Settings: Allowing limited access and control over critical components like Operator logic, YAML configurations, and plugin communication significantly fortifies the security posture of the system. Threat modeling should include potential attacks on communication channels, unauthorized access to sensitive data in YAML configurations, and attempts to tamper with Operator logic or registry contents.
 
 Access Controls and Validation Checks: Enforcing strict access controls and robust validation mechanisms at various stages (such as Operator installation, updates, and reconciliation) is paramount. This prevents malicious actors from bypassing security checks and ensures the system's integrity throughout its lifecycle.
 
 Data Encryption and Masking: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
-
-By focusing on these security-relevant components and features, the OpenShift Operator Framework maintains a robust security posture, reducing potential vulnerabilities and threats to the platform on Kubernetes environments.
 
 ## Project compliance
 
