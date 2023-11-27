@@ -239,7 +239,22 @@ The project has [not been documented](https://www.bestpractices.dev/en/projects)
 
 ### Case Studies
 
+In this section, we evaluate how the Prometheus (optional) and etcd (core) operators leverage the functionalities of the Operator Framework:
 
+- #### Custom Resource Definitions (CRDs)
+  The Operator Framework can be leveraged to define custom APIs that are used to control the behaviour of the operators. The Prometheus Operator uses this feature to define eight CRDs–for example, Prometheus, Alertmanager, and ServiceMonitor among others–which allow users to specify the desired monitoring stack state. The etcd Operator on the other hand leverages this feature to create three CRDs–EtcdBackup, EtcdRestore, and EtcdCluster–to allow users to specify the desired state (size, version, backup policies and restore source) of the etcd clusters.
+
+
+- #### Controller Reconciliation Logic
+  The Operator Framework also provides libraries and tools to streamline the implementation of the operator's reconciliation logic. The Prometheus Operator leverages this to define three separate controllers for three Operands: Prometheus, Alertmaanager, and Thanos, while the etcd operator defines separate controllers for all of its operands. These controllers monitor changes to the desired state of the CRDs and update it accordingly.
+
+- #### Operator Lifecycle Manager
+
+
+
+Source: *The Kubernetes Operator Framework Book* By : Michael Dame
+Chapter 10: Case Study for Optional Opera
+Chapter 11: Case Study for Core Operator – Etcd Operator
 
 
 ### Related Projects
