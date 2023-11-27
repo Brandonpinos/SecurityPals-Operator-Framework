@@ -206,15 +206,31 @@ They fullfill a special service of allowing for the development of Operators wit
 
 ## Security issue resolution
 
-* Responsible Disclosures Process. A outline of the project's responsible
-  disclosures process should suspected security issues, incidents, or
-vulnerabilities be discovered both external and internal to the project. The
-outline should discuss communication methods/strategies.
-  * Vulnerability Response Process. Who is responsible for responding to a
-    report. What is the reporting process? How would you respond?
-* Incident Response. A description of the defined procedures for triage,
-  confirmation, notification of vulnerability or security incident, and
-patching/update availability.
+### Reporting a vulnerability
+Security Vulnerabilities are handled by the Red Hat Product Security and can be reported by sending a mail to secalert@redhat.com.
+
+The sent email will be read and acknowledged with a non-automated response within three working days. The security team requires several information like steps to reproduce, version number etc. which are available [here](https://access.redhat.com/security/team/contact).
+### Creating an issue
+Issues can be created at [opening an issue](https://github.com/operator-framework/operator-sdk/issues/new). More information about how to create an issue can be found [here](https://sdk.operatorframework.io/docs/contribution-guidelines/reporting-issues/).
+
+Issues are tracked [here](https://github.com/operator-framework/operator-sdk/issues).
+### Issue Lifecycle
+#### Triage Meetings
+Each week, there is a triage meeting to review new issues. Each issue that has been filed since the previous meeting is discussed, GitHub labels are applied, and the issue is added to a Milestone. Additionally, anyone can request that a previously triaged issue can be retriaged.
+#### Grooming 
+Following a release, there is a [grooming meeting](https://github.com/operator-framework/community#operator-sdk-grooming-meeting) to review issues that are desired in the next release. Issues are discussed in the following order:
+* Issues in the next release milestone
+* Issues labeled as priority/important-soon
+* Issues in other milestones/backlog if specifically requested
+
+### Operator SDK response team
+* Austin Macdonald (**[@asmacdo](https://github.com/asmacdo)**), Red Hat
+* Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**), IBM
+* Ken Sipe (**[@kensipe](https://github.com/kensipe)**), Code Mentor
+* Varsha Prasad Narsing (**[@varshaprasad96](https://github.com/varshaprasad96)**), Red Hat
+
+The specific details about the timings of the meetings and communication channels are available [here](https://github.com/operator-framework/community#operator-sdk-working-group).
+
 
 ## Appendix
 
