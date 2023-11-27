@@ -146,12 +146,6 @@ Security Pals seeks graduation and is preparing for a security audit.
 
 ### Critical
 
-| Component | Applicability | Description of Importance |
-| --------- | ------------- | ------------------------- |
-| Hashicorp Go-Plugin | Critical | The `Go-Plugin` component enables Privateer to segment Raids as fully independent processes that communicate with the core via RPC on a local network, thereby allowing plugins to operate side-by-side without opportunity for configuration collision or side-channeling. |
-| YAML Configuration | Relevant | The YAML configuration handling enables Privateer to safely read user configuration and secrets across multiple Raid executions while encrypting or masking them when appropriate |
-
-
 #### Operator SDK
 The user is not allowed to modify the underlying logic for scaffolding, testing and deployment as they define the metadata and other manifests for the operator. It also performs validation checks on the Operator's code, bundle, and catalog, and the user cannot bypass these checks.
 
@@ -233,6 +227,23 @@ The specific details about the timings of the meetings and communication channel
 
 
 ## Appendix
+
+### Known Issues Over Time
+
+All reported bugs, issues, and fixes can be viewed from [operator-framework/operator-sdk/issues repository](https://github.com/operator-framework/operator-sdk/issues). However, there is no designated label for all security related issues.
+
+### CII Best Practices
+
+The project has [not been documented](https://www.bestpractices.dev/en/projects) to have achieved the passing level criteria for CII best practices.
+
+### Related Projects
+
+- **Kubebuilder** is an SDK for creating Kubernetes APIs using CRDs and controllers, it is based on the controller-runtime library also used by the Operator SDK. The primary difference is that while the Kubebuilder focuses on building APIs and controllers, the Operator Framework provides additional tools for managing operator lifecycle and distributions. The Github repository is under active maintenance by the community.
+
+- **Metacontroller** is a similar framework that enables users to build custom controllers in any programming language that is supported by the Kubernetes pods. This is because it does not use CRDs or controller-runtime, it rather relies on webhooks and custom resources to communicate with the API server. Similar to Kubebuilder, it does not provide resources for operator lifecycle management and distributions; and, it is not as actively maintained as the Operator Framework.
+
+- **Crossplane** is more of a cloud focused tool, i.e., it manages connecting, consuming and provisioning cloud resources using CRDs and controllers. It also provides a package manager and container registry for the installation and distribution of controllers. The Github repository for Crossplane is under actively maintained.
+
 
 * Known Issues Over Time. List or summarize statistics of past vulnerabilities
   with links. If none have been reported, provide data, if any, about your track
