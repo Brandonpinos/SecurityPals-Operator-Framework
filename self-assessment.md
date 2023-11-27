@@ -144,6 +144,15 @@ Security Pals seeks graduation and is preparing for a security audit.
 
 ## Security functions and features
 
+## Security functions and features
+| Component | Applicability | Description of Importance |
+| --------- | ------------- | ------------------------- |
+| Hashicorp Go-Plugin | Critical | The `Go-Plugin` component enables Privateer to segment Raids as fully independent processes that communicate with the core via RPC on a local network, thereby allowing plugins to operate side-by-side without opportunity for configuration collision or side-channeling. |
+| YAML Configuration | Relevant | The YAML configuration handling enables Privateer to safely read user configuration and secrets across multiple Raid executions while encrypting or masking them when appropriate |
+| Operator SDK | Critical/Relevant | Ensures the integrity and security of the underlying logic by restricting user modifications. Performs validation checks on the Operator's code, bundle, and catalog to prevent unauthorized changes and uphold the security posture of the Operator. |
+| Operator Lifecycle Manager (OLM) | Critical/Relevant | Enables users to specify desired states without direct intervention in OLM reconciliation logic. This separation of concerns enhances security by reducing the risk of user errors or malicious attempts to interfere with the reconciliation process.| 
+| Operator Registry | Critical/Relevant | Automates the generation of manifests and indexes while restricting user access to modification of critical manifest generation/indexing logic. Implements validation checks on Operator bundles, ensuring error-free installations/updates and bolstering overall security. | 
+
 ### Critical
 
 #### Operator SDK
@@ -161,6 +170,14 @@ The user only specifies the Operator bundle and catalog metadata, while the regi
   brief description.  These are considered important to enhance the overall security of
 the project, such as deployment configurations, settings, etc.  These should also be
 included in threat modeling.
+
+Deployment Configurations and Settings: Allowing limited access and control over critical components like Operator logic, YAML configurations, and plugin communication significantly fortifies the security posture of the system. Threat modeling should include potential attacks on communication channels, unauthorized access to sensitive data in YAML configurations, and attempts to tamper with Operator logic or registry contents.
+
+Access Controls and Validation Checks: Enforcing strict access controls and robust validation mechanisms at various stages (such as Operator installation, updates, and reconciliation) is paramount. This prevents malicious actors from bypassing security checks and ensures the system's integrity throughout its lifecycle.
+
+Data Encryption and Masking: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
+
+By focusing on these security-relevant components and features, the OpenShift Operator Framework maintains a robust security posture, reducing potential vulnerabilities and threats to the platform on Kubernetes environments.
 
 ## Project compliance
 
