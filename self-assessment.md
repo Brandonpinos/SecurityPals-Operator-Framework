@@ -191,11 +191,10 @@ Users communicate with the project maintainers through [Operator Framework Googl
 **Outbound**
 Team Members communicate with users through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework).
 
-* Ecosystem. How does your software fit into the cloud native ecosystem?  (e.g.
-  Flibber is integrated with both Flocker and Noodles which covers
-virtualization for 80% of cloud users. So, our small number of "users" actually
-represents very wide usage across the ecosystem since every virtual instance uses
-Flibber encryption by default.)
+### Ecosystem
+Operator Framework plays an integral part in the Cloud Native Ecosystem. They promote the development and automation of specialized Operators for complex services and applications. They enhance many of Kubernetes basic features and account for the shortcomings as well.
+
+They fullfill a special service of allowing for the development of Operators with familiar languages and libraries. This alone creates a large efficiency boost for the development team, which is increased even moreso when taking into the consideration the aforementioned automation aspects of Operator Framework.
 
 ## Security issue resolution
 
