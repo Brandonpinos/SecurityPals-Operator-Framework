@@ -187,7 +187,7 @@ Operators employ several techniques that ensure their security and integrity
 Team Members communicate with each other through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework) and through [Github issues](https://github.com/operator-framework/operator-sdk/issues).
 
 **Inbound**
-Users communicate with the project maintainers through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework), [Operator SDK Contributer Google Groups](https://groups.google.com/g/operator-framework-sdk-dev), [Operator OLM Contributer Google Groups](https://groups.google.com/g/operator-framework-olm-dev), through [Github issues](https://github.com/operator-framework/operator-sdk/issues), and the [#kubernetes-operators](https://kubernetes.slack.com/messages/kubernetes-operators] on the Kubernetes Slack.
+Users communicate with the project maintainers through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework), [Operator SDK Contributer Google Groups](https://groups.google.com/g/operator-framework-sdk-dev), [Operator OLM Contributer Google Groups](https://groups.google.com/g/operator-framework-olm-dev), through [Github issues](https://github.com/operator-framework/operator-sdk/issues), and the [#kubernetes-operators](https://kubernetes.slack.com/messages/kubernetes-operators) on the Kubernetes Slack.
 
 **Outbound**
 Team Members communicate with users through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework).
