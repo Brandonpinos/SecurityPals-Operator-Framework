@@ -27,7 +27,7 @@ Express Learning course provided by Linux Foundation Training & Certification:
 * [Secure development practices](#secure-development-practices)
 * [Security issue resolution](#security-issue-resolution)
 * [Appendix](#appendix)
-* [Threat Modeling With STRIDE](#threat-modeling-with-STRIDE)
+* [Threat Modeling With STRIDE](#threat-Modeling-With-STRIDE)
 
 
 ## Metadata
@@ -164,9 +164,6 @@ Deployment Configurations and Settings: Allowing limited access and control over
 Access Controls and Validation Checks: Enforcing strict access controls and robust validation mechanisms at various stages (such as Operator installation, updates, and reconciliation) is paramount. This prevents malicious actors from bypassing security checks and ensures the system's integrity throughout its lifecycle.
 
 Data Encryption and Masking: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
-
-### [Threat Modeling With STRIDE](#threat-modeling-with-STRIDE)
-
 
 ## Project compliance
 
