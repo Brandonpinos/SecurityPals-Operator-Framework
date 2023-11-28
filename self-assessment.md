@@ -301,7 +301,7 @@ Discard and log as a security event if authentication fails.
 Tampering
 
 ##### Threat-03-T - Tampering of OpenShift Operator Framework Components
-* Description: Karmada components and configuration files can be tampered during build, installation, or runtime.
+* Description: Operator Framework components and configuration files can be tampered during build, installation, or runtime.
 * Mitigations:
 Verify checksum and signature during build and installation.
 Alert and log on modification of components to detect tampering.
