@@ -32,8 +32,6 @@ Express Learning course provided by Linux Foundation Training & Certification:
 
 ## Metadata
 
-A table at the top for quick reference information, later used for indexing.
-
 |   |  |
 | -- | -- |
 | Software | [Operator Framework](https://github.com/operator-framework/operator-sdk)  |
