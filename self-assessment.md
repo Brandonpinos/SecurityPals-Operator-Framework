@@ -285,13 +285,11 @@ Chapter 11: Case Study for Core Operator – Etcd Operator
 
 ### Threat Modeling With STRIDE
 
-#### Spoofing
-
 ##### Threat-01-S - Spoofing of OpenShift Operator Framework Admin
 * Description: Identity of the OpenShift Operator Framework Admin can be spoofed due to stolen credentials or lack of authentication.
 * Mitigations:
-* Implement authentication for OpenShift Operator Framework Admin before processing requests.
-* Discard and log as a security event if authentication fails.
+Implement authentication for OpenShift Operator Framework Admin before processing requests.
+Discard and log as a security event if authentication fails.
 
 ##### Threat-02-S - Spoofing of OpenShift Operator Framework API-Server
 * Description: A user could potentially interfere with a worker cluster and impersonate as the OpenShift Operator Framework API-Server, gaining unauthorized access.
