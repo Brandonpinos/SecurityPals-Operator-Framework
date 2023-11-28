@@ -163,6 +163,8 @@ Access Controls and Validation Checks: Enforcing strict access controls and robu
 
 Data Encryption and Masking: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
 
+### [Threat Modeling With STRIDE](#threat-modeling-with-stride)
+
 ## Project compliance
 
 Not applicable.
