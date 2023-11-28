@@ -285,53 +285,64 @@ the same question.
 
 ### Threat Modeling With STRIDE
 
-Spoofing
-Threat-01-S - Spoofing of OpenShift Operator Framework Admin
-Description: Identity of the OpenShift Operator Framework Admin can be spoofed due to stolen credentials or lack of authentication.
-Mitigations:
-Implement authentication for OpenShift Operator Framework Admin before processing requests.
-Discard and log as a security event if authentication fails.
-Threat-02-S - Spoofing of OpenShift Operator Framework API-Server
-Description: A user could potentially interfere with a worker cluster and impersonate as the OpenShift Operator Framework API-Server, gaining unauthorized access.
-Mitigations:
+#### Spoofing
+
+##### Threat-01-S - Spoofing of OpenShift Operator Framework Admin
+* Description: Identity of the OpenShift Operator Framework Admin can be spoofed due to stolen credentials or lack of authentication.
+* Mitigations:
+* Implement authentication for OpenShift Operator Framework Admin before processing requests.
+* Discard and log as a security event if authentication fails.
+
+##### Threat-02-S - Spoofing of OpenShift Operator Framework API-Server
+* Description: A user could potentially interfere with a worker cluster and impersonate as the OpenShift Operator Framework API-Server, gaining unauthorized access.
+* Mitigations:
 Authenticate OpenShift Operator Framework API-Server and worker clusters before processing requests.
 Discard and log as a security event if authentication fails.
 Tampering
-Threat-03-T - Tampering of OpenShift Operator Framework Components
-Description: Karmada components and configuration files can be tampered during build, installation, or runtime.
-Mitigations:
+
+##### Threat-03-T - Tampering of OpenShift Operator Framework Components
+* Description: Karmada components and configuration files can be tampered during build, installation, or runtime.
+* Mitigations:
 Verify checksum and signature during build and installation.
 Alert and log on modification of components to detect tampering.
-Threat-04-T - Tampering of Communication to Worker Cluster
-Description: Communication from Control Plane to Worker Cluster can be tampered during transit, allowing unauthorized modifications.
-Mitigations:
+
+##### Threat-04-T - Tampering of Communication to Worker Cluster
+* Description: Communication from Control Plane to Worker Cluster can be tampered during transit, allowing unauthorized modifications.
+* Mitigations:
 Verify integrity of commands received before processing.
 Discard and log as a security event if integrity check fails.
 Repudiation
-Threat-05-R - Repudiation of Admin Actions
-Description: Actions performed by OpenShift Operator Framework Admin should be detectable and logged for auditing purposes.
-Mitigations:
+
+##### Threat-05-R - Repudiation of Admin Actions
+* Description: Actions performed by OpenShift Operator Framework Admin should be detectable and logged for auditing purposes.
+* Mitigations:
 Implement auditing to log all actions performed by the Admin.
 Implement centralized audit collection for suspicious activities.
 Information Disclosure
-Threat-06-I - Exposure of Communication between Control Plane and Worker Cluster
-Description: Snooping of communication exposes sensitive information between Control Plane and Worker Cluster.
-Mitigations:
+
+##### Threat-06-I - Exposure of Communication between Control Plane and Worker Cluster
+* Description: Snooping of communication exposes sensitive information between Control Plane and Worker Cluster.
+* Mitigations:
 Encrypt sensitive information during communication.
 Denial of Service
-Threat-07-D - Exhausting Cloud Resources
-Description: Incessant requests within the network can make Worker Cluster unavailable.
-Mitigations:
+
+##### Threat-07-D - Exhausting Cloud Resources
+* Description: Incessant requests within the network can make Worker Cluster unavailable.
+* Mitigations:
 Isolate the network of the OpenShift Operator Framework environment.
 Isolate Worker Cluster from users.
 Elevation of Privilege
-Threat-08-E - Elevating Access to Control Plane via Worker Cluster
-Description: Compromising a Worker Cluster can potentially allow access to the Control Plane.
-Mitigations:
+
+##### Threat-08-E - Elevating Access to Control Plane via Worker Cluster
+* Description: Compromising a Worker Cluster can potentially allow access to the Control Plane.
+* Mitigations:
 Implement separation of privileges between Control Plane and Worker Cluster.
-Threat-09-E - Elevation of Access via Create Cluster Permission
-Description: Create Cluster permissions could lead to unauthorized elevated access.
-Mitigations:
+
+##### Threat-09-E - Elevation of Access via Create Cluster Permission
+* Description: Create Cluster permissions could lead to unauthorized elevated access.
+* Mitigations:
 Limit permissions for creating pods.
 Implement Cluster-level Pod Security to prevent unauthorized access.
+
+
 This STRIDE-based threat model outlines potential threats and recommended mitigations for security considerations within the OpenShift Operator Framework in Kubernetes projects. Adjustments can be made based on the specific architecture and implementation details of the OpenShift Operator Framework in use.
