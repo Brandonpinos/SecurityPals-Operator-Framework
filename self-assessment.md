@@ -155,11 +155,11 @@ Operator Framework seeks graduation and is preparing for a security audit.
 ### Security Relevant
 By focusing on the following security-relevant components and features, the OpenShift Operator Framework maintains a robust security posture, reducing potential vulnerabilities and threats to the platform on Kubernetes environments.
 
-Deployment Configurations and Settings: Allowing limited access and control over critical components like Operator logic, YAML configurations, and plugin communication significantly fortifies the security posture of the system. Threat modeling should include potential attacks on communication channels, unauthorized access to sensitive data in YAML configurations, and attempts to tamper with Operator logic or registry contents.
+**Deployment Configurations and Settings**: Allowing limited access and control over critical components like Operator logic, YAML configurations, and plugin communication significantly fortifies the security posture of the system. Threat modeling should include potential attacks on communication channels, unauthorized access to sensitive data in YAML configurations, and attempts to tamper with Operator logic or registry contents.
 
-Access Controls and Validation Checks: Enforcing strict access controls and robust validation mechanisms at various stages (such as Operator installation, updates, and reconciliation) is paramount. This prevents malicious actors from bypassing security checks and ensures the system's integrity throughout its lifecycle.
+**Access Controls and Validation Checks**: Enforcing strict access controls and robust validation mechanisms at various stages (such as Operator installation, updates, and reconciliation) is paramount. This prevents malicious actors from bypassing security checks and ensures the system's integrity throughout its lifecycle.
 
-Data Encryption and Masking: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
+**Data Encryption and Masking**: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
 
 ## Project compliance
 
