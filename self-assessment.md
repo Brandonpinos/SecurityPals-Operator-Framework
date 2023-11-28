@@ -57,9 +57,9 @@ The SDK is a framework that allows developers to build and manipulate Operators 
 
 ### Background
 
-Streamlining processes for consumers, workers, and industries in general is often of utmost importance. It saves time, money, and headaches for everyone involved. When it comes to installing a piece of software, most expect it to be simple with only a few clicks involved, the same applies to updates and upgrades for that software. However every machine is different and each application has numerous dependencies that are necessary to run it correctly.To expect consumers or people who are not as proficient with technology to install the correct one from slightly different variations would be nonsensical.
+Streamlining processes for consumers, workers, and industries in general is often of utmost importance. It saves time, money, and headaches for everyone involved. When it comes to installing a piece of software, most expect it to be simple with only a few clicks involved, the same applies to updates and upgrades for that software. However every machine is different and each application has numerous dependencies that are necessary to run it correctly. To expect consumers or people who are not as proficient with technology to install the correct one from slightly different variations would be nonsensical.
 
-Containerization solves this problem. Containerization is the process of packaging an application with all its dependencies into a single, self-contained unit called a container. This would include the application code, source tools, runtime libraries, and more. By providing an isolated environment, this ensures that the application would be consistent in running on multiple different machines, regardless of the individual conditions.Containerization allows for ease of use, portability, scalability, and efficient deployment of applications.
+Containerization solves this problem. Containerization is the process of packaging an application with all its dependencies into a single, self-contained unit called a container. This would include the application code, source tools, runtime libraries, and more. By providing an isolated environment, this ensures that the application would be consistent in running on multiple different machines, regardless of the individual conditions. Containerization allows for ease of use, portability, scalability, and efficient deployment of applications.
 
 A developer team seeking to utilize these benefits for their application would find Kubernetes very helpful. Kubernetes is an open source containerization platform that automates application deployment, updates, and overall management. It provides the container infrastructure and allows developers to define their application requirements. These reasons alone with a host of other benefits would be a great help to any development team.
 
@@ -68,7 +68,7 @@ However, setting up and configuring Kubernetes clusters can pose a challenge for
 Operator Framework is a solution to this problem along with providing several benefits that Kubernetes does not natively supply. Operator Framework allows developers to build Operators with languages and libraries that they are already familiar with. Operators built with Operator Framework allow for even more options for automation of tasks and workflows beyond the basic functionalities provided by Kubernetes. Overall Operator Framework complements the benefits that Kubernetes offers by providing the specialized tools for easier learning for developers, better automation, and better scalability making Kubernetes an easier and more powerful tool.
 
 ### Actors
-Operator Framework is comprised of a few different parts including, 
+Operator Framework is comprised of a few different parts including
 
 #### Operator Framework SDK
 The framework used to build and package Operators. Using Operator SDK allows developers to easily automate and manage any Operators they create. It constructs basic manifests such as the CRD, RBAC, Dockerfile­, and the primary file "main.go", and offers some sample illustrations. The user interacts with the Operator SDK through a command line interface (CLI) to create, test, and build operators and manage the Operator Life Cycle Manager (OLM) installation in the cluster.
@@ -88,10 +88,10 @@ These components make up Operator Framework and make it very useful for developi
 
 #### Creating an Operator using Operator Framework SDK
 1. Create new project operator using the SDK Command Line Interface (CLI)
-2. Define resource APis by adding Custom Resource Definitions
+2. Define resource APIs by adding Custom Resource Definitions
 3. Define controllers
 4. Write reconciling logic for controllers using SDK and APIs
-5. Using the SDK CLI, define webhooks for the custom resource, e.g., validating/mutating webhooks if necessary.
+5. Using the SDK CLI, define webhooks for the custom resource, e.g., validating/mutating webhooks if necessary
 6. Use the SDK Command Line Interface to generate the operator deployment manifest
 
 #### Installing and Managing an Operator using Operator Framework Operator Lifecycle Manage (OLM)
@@ -100,11 +100,11 @@ These components make up Operator Framework and make it very useful for developi
 1. Use Catalog Operator to create Operator from OperaterHub
 
 Operator OLM
-1. Watches for the ClusterServiceVersion (CSV) in a namspace and checks to make sure the requirements are met
-2. If requirements are met, the install strategy is ran
+1. Watches for the ClusterServiceVersion (CSV) in a namespace and checks to make sure the requirements are met
+2. If requirements are met, the install strategy is executed
 
 Catalog Operator
-1. Holds a cache of CSVs and CRDs.
+1. Holds a cache of CSVs and CRDs
 2. Watches for InstallPlans set by user
 3. If one is found, finds the matching name and adds as a resource, else 7b
 4. For each managed CRD, adds as a resolved resource
@@ -117,7 +117,7 @@ The goals of Operator Framework are mainly to simplify and enhance applications 
 
 It does this by using the Operator SDK to simplify creation and automation of Operators. This thoroughly increases developer productivity.
 
-Operator Framework also enhances the reliability of complex applications by allowing them to declare specific configurations to make sure the application is always running as desired. This would in turn reduce possible downtime and making it easier for the responsible department
+Operator Framework also enhances the reliability of complex applications by allowing them to declare specific configurations to make sure the application is always running as desired. This would in turn reduce possible downtime and making it easier for the responsible department.
 
 For security guarantees, Operator Framework uses the same principles as Kubernetes such as Role-Based Access Control so that applications cannot act outside of the scope provided. This along with other network isolation policies ensures the security aspect. 
 
@@ -178,10 +178,10 @@ All Code is maintained in [Github](https://github.com/operator-framework) and ch
 * Merges are performed after passing checks and review by maintainer
 
 Operators employ several techniques that ensure their security and integrity
-* Operators follow the principle of least privelege, ensuring that they only access the necessary resources with the least amount of permissions.
+* Operators follow the principle of least privilege, ensuring that they only access the necessary resources with the least amount of permissions
 * Operators use secure communication channels such as SSH between various components to prevent eavesdropping or mishandling of information
 * Operators should employ a Role Based Access System to ensure that only the authorized users and services are allowed to perform actions in the Operator's lifecycle
-* Operators are expected to use Kubernetes Secrets objects rather than hardcoding for sensitive data.
+* Operators are expected to use Kubernetes Secrets objects rather than hardcoding for sensitive data
 
 ### Communication Channels
 
@@ -189,7 +189,7 @@ Operators employ several techniques that ensure their security and integrity
 Team Members communicate with each other through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework) and through [Github issues](https://github.com/operator-framework/operator-sdk/issues).
 
 **Inbound**
-Users communicate with the project maintainers through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework), [Operator SDK Contributer Google Groups](https://groups.google.com/g/operator-framework-sdk-dev), [Operator OLM Contributer Google Groups](https://groups.google.com/g/operator-framework-olm-dev), through [Github issues](https://github.com/operator-framework/operator-sdk/issues), and the #kubernetes-operators on the Kubernetes Slack.
+Users communicate with the project maintainers through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework), [Operator SDK Contributer Google Groups](https://groups.google.com/g/operator-framework-sdk-dev), [Operator OLM Contributer Google Groups](https://groups.google.com/g/operator-framework-olm-dev), through [Github issues](https://github.com/operator-framework/operator-sdk/issues), and the [#kubernetes-operators](https://kubernetes.slack.com/messages/kubernetes-operators] on the Kubernetes Slack.
 
 **Outbound**
 Team Members communicate with users through [Operator Framework Google Groups](https://groups.google.com/g/operator-framework).
@@ -197,7 +197,7 @@ Team Members communicate with users through [Operator Framework Google Groups](h
 ### Ecosystem
 Operator Framework plays an integral part in the Cloud Native Ecosystem. They promote the development and automation of specialized Operators for complex services and applications. They enhance many of Kubernetes basic features and account for the shortcomings as well.
 
-They fullfill a special service of allowing for the development of Operators with familiar languages and libraries. This alone creates a large efficiency boost for the development team, which is increased even moreso when taking into the consideration the aforementioned automation aspects of Operator Framework.
+They fulfill a special service of allowing for the development of Operators with familiar languages and libraries. This alone creates a large efficiency boost for the development team, which is increased even more when taking into the consideration the aforementioned automation aspects of Operator Framework.
 
 ## Security issue resolution
 
