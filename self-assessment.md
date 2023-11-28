@@ -158,15 +158,6 @@ By focusing on the following security-relevant components and features, the Open
 | Access Controls and Validation Checks | High | Enforcing strict access controls and robust validation mechanisms prevents bypassing security checks and maintains integrity during the system's lifecycle. |
 | Data Encryption and Masking | High |  Implementing encryption and masking for sensitive information within YAML configurations safeguards data from unauthorized access, bolstering overall system security. |
 
-<<<<<<< HEAD
-=======
-**Deployment Configurations and Settings**: Allowing limited access and control over critical components like Operator logic, YAML configurations, and plugin communication significantly fortifies the security posture of the system. Threat modeling should include potential attacks on communication channels, unauthorized access to sensitive data in YAML configurations, and attempts to tamper with Operator logic or registry contents.
-
-**Access Controls and Validation Checks**: Enforcing strict access controls and robust validation mechanisms at various stages (such as Operator installation, updates, and reconciliation) is paramount. This prevents malicious actors from bypassing security checks and ensures the system's integrity throughout its lifecycle.
-
-**Data Encryption and Masking**: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
-
->>>>>>> 783fd71a7e9ca56da1c0943880f5927fdc63f1fc
 ## Project compliance
 
 Not applicable.
