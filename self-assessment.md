@@ -51,7 +51,6 @@ Express Learning course provided by Linux Foundation Training & Certification:
 
 Operator Framework is an open-source toolkit that provides the runtime environment and software development kit (SDK) for building and running Kubernetes applications, dubbed “Operators”, in an effective and easily scalable way.
 
-The SDK is a framework that allows developers to build and manipulate Operators without prior knowledge of the complexities of Kubernetes API. By providing libraries and tools, developers can use familiar languages to streamline the process.
 
 ### Background
 
@@ -59,14 +58,14 @@ Streamlining processes for consumers, workers, and industries in general is ofte
 
 Containerization solves this problem. Containerization is the process of packaging an application with all its dependencies into a single, self-contained unit called a container. This would include the application code, source tools, runtime libraries, and more. By providing an isolated environment, this ensures that the application would be consistent in running on multiple different machines, regardless of the individual conditions. Containerization allows for ease of use, portability, scalability, and efficient deployment of applications.
 
-A developer team seeking to utilize these benefits for their application would find Kubernetes very helpful. Kubernetes is an open source containerization platform that automates application deployment, updates, and overall management. It provides the container infrastructure and allows developers to define their application requirements. These reasons alone with a host of other benefits would be a great help to any development team.
+Kubernetes is a control system that helps manage and run applications with multiple software components. An open source containerization platform, Kubernetes automates application deployment, updates, and overall management. It provides the container infrastructure and allows developers to define their application requirements. These reasons alone with a host of other benefits would be a great help to any development team.
 
-However, setting up and configuring Kubernetes clusters can pose a challenge for developers unfamiliar with Kubernetes. It requires an in-depth understanding of networking, infrastructure, and storage concepts. These are significant learning curves that create a “threshold filter” of sorts that leads developers to deciding on a different alternative to Kubernetes. 
+However, setting up and configuring Kubernetes clusters can pose a challenge for developers unfamiliar with its complexities. It requires an in-depth understanding of networking, infrastructure, and storage concepts. These are significant learning curves that create a “threshold filter” of sorts that leads developers to deciding on a different alternative to Kubernetes. 
 
-Operator Framework is a solution to this problem along with providing several benefits that Kubernetes does not natively supply. Operator Framework allows developers to build Operators with languages and libraries that they are already familiar with. Operators built with Operator Framework allow for even more options for automation of tasks and workflows beyond the basic functionalities provided by Kubernetes. Overall Operator Framework complements the benefits that Kubernetes offers by providing the specialized tools for easier learning for developers, better automation, and better scalability making Kubernetes an easier and more powerful tool.
+Red Hat's OpenShift which utilizes an Operator Framework is a solution to this problem along with providing several benefits that Kubernetes does not natively supply. The Operator Framework allows developers to build Operators with languages and libraries that they are already familiar with. Operators built with Operator Framework allow for even more options for automation of tasks and workflows beyond the basic functionalities provided by Kubernetes. Overall Operator Framework complements the benefits that Kubernetes offers by providing the specialized tools for easier learning for developers, better automation, and better scalability making Kubernetes an easier and more powerful tool.
 
 ### Actors
-Operator Framework is comprised of a few different parts including
+Operator Framework is comprised of the following parts 
 
 #### Operator Framework SDK
 The framework used to build and package Operators. Using Operator SDK allows developers to easily automate and manage any Operators they create. It constructs basic manifests such as the CRD, RBAC, Dockerfile­, and the primary file "main.go", and offers some sample illustrations. The user interacts with the Operator SDK through a command line interface (CLI) to create, test, and build operators and manage the Operator Life Cycle Manager (OLM) installation in the cluster.
@@ -75,7 +74,7 @@ The framework used to build and package Operators. Using Operator SDK allows dev
 Contains two parts, Operator OLM and Catalog Operator. Both provides the runtime environment and APIs for managing the lifecycle of Operators and their resources. It also helps in deploying, installing, and updating Operators. Operator OLM is for manually created Operators and Catalog Operator is for Operators taken from Operater Hub. 
 
 #### Operator Registry
-The Operator Registry is essentially a gRPC API that provides the OLM with operator bundle data, allowing querying of these operator bundles. It provides several binaries, including ```opm```(which updates registry databases and the index images), ```initializer```(which takes operator manifests as inputs and outputs SQLite database with the data allowing querying), and many more.
+The Operator Registry is a gRPC API that provides the OLM with operator bundle data, allowing querying of these operator bundles. It provides several binaries, including ```opm```( updates registry databases and the index images), ```initializer```( takes operator manifests as inputs and outputs SQLite database with the data allowing querying), and many more.
 
 #### Operator Hub
 A community-driven public hub for sharing and discovering Operators for various uses.
@@ -114,13 +113,13 @@ Catalog Operator
 
 
 ### Goals
-The goals of Operator Framework are mainly to simplify and enhance applications  on Kubernetes clusters. 
+The goals of Operator Framework is to simplify and enhance applications on Kubernetes clusters. 
 
-It does this by using the Operator SDK to simplify creation and automation of Operators. This thoroughly increases developer productivity.
+It does this by using the Operator Software Development Kits (SDK) to simplify creation and automation of Operators. This thoroughly increases developer productivity.
 
-Operator Framework also enhances the reliability of complex applications by allowing them to declare specific configurations to make sure the application is always running as desired. This would in turn reduce possible downtime and making it easier for the responsible department.
+Operator Framework also enhances the reliability of complex applications by allowing them to declare specific configurations to make sure the application is always running as desired. This would in turn reduce possible downtime and making it easier for the maintaining ditributed dependent systems.
 
-For security guarantees, Operator Framework uses the same principles as Kubernetes such as Role-Based Access Control so that applications cannot act outside of the scope provided. This along with other network isolation policies ensures the security aspect. 
+For security guarantees, Operator Framework uses the same principles as Kubernetes such as Role-Based Access Control so that applications cannot act outside of the scope provided. This along with other network isolation policies maintains enterprise providing a product that is secure, stable, tested for capacity with increased usability.
 
 ### Non-goals
 Although Operator Framework enhances many basic features of Kubernetes, as a result it also shares some of the same non-goals. The logging and monitoring, although provided, are basic as they are not meant to be a replacement for fully comprehensive security logging and monitoring alternatives.
@@ -131,12 +130,9 @@ They also do not cover every aspect of deployment of applications. They mainly f
 
 This self-assessment is created by the Security Pals team to perform an internal analysis of the
 OpenShift Operator Framework's security.  It is not intended to provide a security audit of Operator Framework, or
-function as an independent assessment or attestation of Operator Framework's security health.
+function as an independent assessment or attestment of Operator Framework's security health.
 
-This document serves to provide Operator Framework users with an initial understanding of
-OpenShifts's security, where to find existing security documentation, Operator Framework plans for
-security, and general overview of Operator Framework security practices, both for development of
-Operator Framework as well as security of Operator Framework.
+This document serves to provide Operator Framework users with an brief and easily understandable description of OpenShifts's security. Defines where to find existing security documentation. Clearly defines Operator Framework plans for security. Lays out general overview of Operator Framework security practices both for development of Operator Framework as well as security of Operator Framework.
 
 This document provides the CNCF TAG-Security with an initial understanding of OpenShift
 to assist in a joint-assessment, necessary for projects under incubation.  Taken
@@ -145,6 +141,9 @@ Operator Framework seeks graduation and is preparing for a security audit.
 
 
 ## Security functions and features
+
+By focusing on the following security-relevant components and features, the OpenShift Operator Framework maintains a robust security posture, reducing potential vulnerabilities and threats to the platform on Kubernetes environments.
+
 | Component | Applicability | Description of Importance |
 | --------- | ------------- | ------------------------- |
 | Operator SDK | Critical | Ensures the integrity and security of the underlying logic by restricting user modifications. Performs validation checks on the Operator's code, bundle, and catalog to prevent unauthorized changes and uphold the security posture of the Operator. |
@@ -152,15 +151,22 @@ Operator Framework seeks graduation and is preparing for a security audit.
 | Operator Registry | Relevant | Automates the generation of manifests and indexes while restricting user access to modification of critical manifest generation/indexing logic. Implements validation checks on Operator bundles, ensuring error-free installations/updates and bolstering overall security. | 
 
 
-### Security Relevant
-By focusing on the following security-relevant components and features, the OpenShift Operator Framework maintains a robust security posture, reducing potential vulnerabilities and threats to the platform on Kubernetes environments.
+### Security Measures for OpenShift Operator Framework
+| Security Aspect | Importance | Description of Importance |
+| --------------- | ---------- | ------------------------- |
+| Depolyment Configurations and Settings | High | Limited access to critical components fortifies security. Threat modeling includes potential attacks on communication channels, unauthorized data access in YAML configurations, and tampering attempts with Operator logic or registry contents.|
+| Access Controls and Validation Checks | High | Enforcing strict access controls and robust validation mechanisms prevents bypassing security checks and maintains integrity during the system's lifecycle. |
+| Data Encryption and Masking | High |  Implementing encryption and masking for sensitive information within YAML configurations safeguards data from unauthorized access, bolstering overall system security. |
 
+<<<<<<< HEAD
+=======
 **Deployment Configurations and Settings**: Allowing limited access and control over critical components like Operator logic, YAML configurations, and plugin communication significantly fortifies the security posture of the system. Threat modeling should include potential attacks on communication channels, unauthorized access to sensitive data in YAML configurations, and attempts to tamper with Operator logic or registry contents.
 
 **Access Controls and Validation Checks**: Enforcing strict access controls and robust validation mechanisms at various stages (such as Operator installation, updates, and reconciliation) is paramount. This prevents malicious actors from bypassing security checks and ensures the system's integrity throughout its lifecycle.
 
 **Data Encryption and Masking**: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
 
+>>>>>>> 783fd71a7e9ca56da1c0943880f5927fdc63f1fc
 ## Project compliance
 
 Not applicable.
