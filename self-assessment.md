@@ -27,7 +27,7 @@ Express Learning course provided by Linux Foundation Training & Certification:
 * [Secure development practices](#secure-development-practices)
 * [Security issue resolution](#security-issue-resolution)
 * [Appendix](#appendix)
-* [Threat Modeling With STRIDE](#threat-Modeling-With-STRIDE)
+* [Threat Modeling With STRIDE](#Threat-Modeling-With-STRIDE)
 
 
 ## Metadata
