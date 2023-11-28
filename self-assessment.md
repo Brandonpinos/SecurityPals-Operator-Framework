@@ -108,7 +108,7 @@ Operator OLM
 Catalog Operator
 1. Holds a cache of CSVs and CRDs
 2. Watches for InstallPlans set by user
-3. If one is found, finds the matching name and adds as a resource, else 7b
+3. If one is found, finds the matching name and adds as a resource, else go to step 7
 4. For each managed CRD, adds as a resolved resource
 5. For each resolved CRD, finds the managing CSV
 6. Watches for resolved InstallPlans and creates resources for them
