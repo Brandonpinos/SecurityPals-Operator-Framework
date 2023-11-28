@@ -259,10 +259,11 @@ The problem with finding specific case studies is that it is usually not *explic
 
 -   The Operator Framework also provides libraries and tools to streamline the implementation of the **operator's reconciliation logic**, i.e., define custom controllers for operands. This is evidenced by the etcd operator for example, which defines custom controllers for each of it's three CRDs.
 
--   The **Operator Lifecycle Manager (OLM)** provides the means to bundle, distribute, and manage the operator and its dependencies. The use case for this is very intuitive:
-   - An update of the etcd version is rolled out.
-   - OLM checks CatalogSource, a new ClusterServiceVersion (CSV) is available compared to the current installation.
-   - OLM schedules an upgrade, in a way that does not cause data loss according to the reconciliation logic provided by the etcd maintainers.
+- The **Operator Lifecycle Manager (OLM)** provides the means to bundle, distribute, and manage the operator and its dependencies. The likely use case for this is very intuitive:
+    - An update of the etcd version is rolled out.
+    - The OLM checks the CatalogSource and sees that a new ClusterServiceVersion (CSV) is available compared to the current installation.
+    - The OLM schedules an upgrade in a way that does not cause data loss, according to the reconciliation logic provided by the etcd maintainers.
+
 
 ```
 Dame, M. (2022). The Kubernetes Operator Framework Book. Packt Publishing. (Chapter 10: Case Study for Optional Operator - Prometheus Operator; Chapter 11: Case Study for Core Operator – Etcd Operator)
