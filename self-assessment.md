@@ -235,13 +235,9 @@ The specific details about the timings of the meetings and communication channel
 All reported bugs, issues, and fixes can be viewed from [operator-framework/operator-sdk/issues repository](https://github.com/operator-framework/operator-sdk/issues). However, there is no designated label for all security related issues.
 
 Examples of some known issues include:
-- **Operator-sdk run bundle failed registry pod due to missing root schema field [#6584](https://github.com/operator-framework/operator-sdk/issues/6584)**
+- **Operator-sdk run bundle failed registry pod due to missing root schema field [#6584](https://github.com/operator-framework/operator-sdk/issues/6584)** This is a case where the user tried to run ``` operator-sdk run bundle quay.io/henry_h_li/common-service-operator-bundle:a9101de0-dirty --install-mode OwnNamespace ``` but the registry pod was stuck in a crash loop. 
 
-This is a case where the user tried to run ``` operator-sdk run bundle quay.io/henry_h_li/common-service-operator-bundle:a9101de0-dirty --install-mode OwnNamespace ``` but the registry pod was stuck in a crash loop. 
-
--  **Controller fails on empty manifest files from a Helm Chart [#2622](https://github.com/operator-framework/operator-sdk/issues/2622)**
-
-This is a case where the user tries to reconcile an empty manifest file, and expects the controller to simply ignore the empty resources.
+-  **Controller fails on empty manifest files from a Helm Chart [#2622](https://github.com/operator-framework/operator-sdk/issues/2622)** This is a case where the user tries to reconcile an empty manifest file, and expects the controller to simply ignore the empty resources.
 
 - **operator-sdk run bundle giving ```FATA[0120] Failed to run bundle: error waiting for CSV to install: timed out waiting for the condition``` [#6432](https://github.com/operator-framework/operator-sdk/issues/6432)**
 This is a case where the user tried to bundle a working operator and run it, but the bundle times out. 
