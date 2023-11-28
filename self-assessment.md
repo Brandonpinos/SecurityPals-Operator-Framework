@@ -27,6 +27,8 @@ Express Learning course provided by Linux Foundation Training & Certification:
 * [Secure development practices](#secure-development-practices)
 * [Security issue resolution](#security-issue-resolution)
 * [Appendix](#appendix)
+* [Threat Modeling With STRIDE](#threat-modeling-with-STRIDE)
+
 
 ## Metadata
 
@@ -163,7 +165,8 @@ Access Controls and Validation Checks: Enforcing strict access controls and robu
 
 Data Encryption and Masking: Implementing encryption and masking techniques for sensitive information within YAML configurations is essential. This shields critical data from unauthorized access or exposure, contributing to the overall security resilience of the system.
 
-### [Threat Modeling With STRIDE](#threat-modeling-with-stride)
+### [Threat Modeling With STRIDE](#threat-modeling-with-STRIDE)
+
 
 ## Project compliance
 
