@@ -114,6 +114,9 @@ Catalog Operator
 6. Watches for resolved InstallPlans and creates resources for them
 7. Watches for subscriptions to Operators in Catalog, and creates InstallPlans for them
 
+![image](https://github.com/Brandonpinos/SecurityPals-Operator-Framework/assets/71077398/2ca592a0-f9ca-4595-a578-4a000d9ed19a)
+
+
 ### Goals
 The goals of Operator Framework are mainly to simplify and enhance applications  on Kubernetes clusters. 
 
@@ -279,22 +282,6 @@ Chapter 11: Case Study for Core Operator – Etcd Operator
 - **Crossplane** is more of a cloud focused tool, i.e., it manages connecting, consuming and provisioning cloud resources using CRDs and controllers. It also provides a package manager and container registry for the installation and distribution of controllers. The Github repository for Crossplane is under actively maintained.
 
 
-
-
-
-
-Known Issues Over Time. List or summarize statistics of past vulnerabilities
-  with links. If none have been reported, provide data, if any, about your track
- record in catching issues in code review or automated testing.
- [CII Best Practices](https://www.coreinfrastructure.org/programs/best-practices-program/).
-  Best Practices. A brief discussion of where the project is at
-  with respect to CII best practices and what it would need to
-  achieve the badge.
-  Case Studies. Provide context for reviewers by detailing 2-3 scenarios of
-  real-world use cases.
-Related Projects / Vendors. Reflect on times prospective users have asked
-  about the differences between your project and projectX. Reviewers will have
-the same question.
 
 ### Threat Modeling With STRIDE
 
