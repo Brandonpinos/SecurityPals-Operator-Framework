@@ -51,6 +51,8 @@ Express Learning course provided by Linux Foundation Training & Certification:
 
 Operator Framework is an open-source toolkit that provides the runtime environment and software development kit (SDK) for building and running Kubernetes applications, dubbed “Operators”, in an effective and easily scalable way.
 
+Built on top of Kubernetes, OpenShift Operators use kubernetes as a framework to allow extensions to developers to build and manipulate Operators without prior knowledge of the complexities of Kubernetes API. By automating deployment, scale, updates and maintenance OpenShift uses operators to manage systems without the need of consistent human intervention. If interaction is necessary, OpenShift’s operators provide specialized libraries and tools to allow developers to use familiar languages to interact with operators in a simple way.
+
 
 ### Background
 
