@@ -264,9 +264,9 @@ The problem with finding specific case studies is that it is usually not *explic
    - OLM checks CatalogSource, a new ClusterServiceVersion (CSV) is available compared to the current installation.
    - OLM schedules an upgrade, in a way that does not cause data loss according to the reconciliation logic provided by the etcd maintainers.
 
-
+```
 Dame, M. (2022). The Kubernetes Operator Framework Book. Packt Publishing. (Chapter 10: Case Study for Optional Operator - Prometheus Operator; Chapter 11: Case Study for Core Operator – Etcd Operator)
-
+```
 
 ### Related Projects
 
