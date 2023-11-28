@@ -131,25 +131,23 @@ They also do not cover every aspect of deployment of applications. They mainly f
 ## Self-assessment use
 
 This self-assessment is created by the Security Pals team to perform an internal analysis of the
-project's security.  It is not intended to provide a security audit of Security Pals, or
-function as an independent assessment or attestation of Security Pals's security health.
+OpenShift Operator Framework's security.  It is not intended to provide a security audit of Operator Framework, or
+function as an independent assessment or attestation of Operator Framework's security health.
 
-This document serves to provide Security Pals users with an initial understanding of
-Security Pals's security, where to find existing security documentation, Security Pals plans for
-security, and general overview of Security Pals security practices, both for development of
-Security Pals as well as security of Security Pals.
+This document serves to provide Operator Framework users with an initial understanding of
+OpenShifts's security, where to find existing security documentation, Operator Framework plans for
+security, and general overview of Operator Framework security practices, both for development of
+Operator Framework as well as security of Operator Framework.
 
-This document provides the CNCF TAG-Security with an initial understanding of Security Pals
+This document provides the CNCF TAG-Security with an initial understanding of OpenShift
 to assist in a joint-assessment, necessary for projects under incubation.  Taken
 together, this document and the joint-assessment serve as a cornerstone for if and when
-Security Pals seeks graduation and is preparing for a security audit.
+Operator Framework seeks graduation and is preparing for a security audit.
 
 
 ## Security functions and features
 | Component | Applicability | Description of Importance |
 | --------- | ------------- | ------------------------- |
-| Hashicorp Go-Plugin | Critical | The `Go-Plugin` component enables Privateer to segment Raids as fully independent processes that communicate with the core via RPC on a local network, thereby allowing plugins to operate side-by-side without opportunity for configuration collision or side-channeling. |
-| YAML Configuration | Relevant | The YAML configuration handling enables Privateer to safely read user configuration and secrets across multiple Raid executions while encrypting or masking them when appropriate |
 | Operator SDK | Critical | Ensures the integrity and security of the underlying logic by restricting user modifications. Performs validation checks on the Operator's code, bundle, and catalog to prevent unauthorized changes and uphold the security posture of the Operator. |
 | Operator Lifecycle Manager (OLM) | Critical | Enables users to specify desired states without direct intervention in OLM reconciliation logic. This separation of concerns enhances security by reducing the risk of user errors or malicious attempts to interfere with the reconciliation process.| 
 | Operator Registry | Relevant | Automates the generation of manifests and indexes while restricting user access to modification of critical manifest generation/indexing logic. Implements validation checks on Operator bundles, ensuring error-free installations/updates and bolstering overall security. | 
