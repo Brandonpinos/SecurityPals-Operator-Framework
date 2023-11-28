@@ -42,8 +42,6 @@ Express Learning course provided by Linux Foundation Training & Certification:
 
 ### Security links
 
-Provide the list of links to existing security documentation for the project. You may
-use the table below as an example:
 | Doc | url |
 | -- | -- |
 | Security file | https://github.com/operator-framework/operator-sdk/blob/master/SECURITY.md |
