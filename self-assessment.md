@@ -251,17 +251,18 @@ The project has [not been documented](https://www.bestpractices.dev/en/projects)
 
 ### Case Studies
 
-In this section, we evaluate how the Prometheus (optional) and etcd (core) operators leverage the functionalities of the Operator Framework:
+The problem with finding specific case studies is that it is usually not *explicitly* documented when the project is built by the operator framework. Hence, we look at the applicability of the features provided by the operator framework through the lens of Prometheus and etcd operators:
 
-- #### Custom Resource Definitions (CRDs)
-  The Operator Framework can be leveraged to define custom APIs that are used to control the behaviour of the operators. The Prometheus Operator uses this feature to define eight CRDs–for example, Prometheus, Alertmanager, and ServiceMonitor among others–which allow users to specify the desired monitoring stack state. The etcd Operator on the other hand leverages this feature to create three CRDs–EtcdBackup, EtcdRestore, and EtcdCluster–to allow users to specify the desired state (size, version, backup policies and restore source) of the etcd clusters.
+- The primary application of this framework is often the creation of **custom resources**. The necessity of this feature is evidenced by the following examples:
+    - The Prometheus Operator defines eight CRDs–for example, Prometheus, Alertmanager, and ServiceMonitor among others–which allow users to specify the desired monitoring stack state.
+  - The etcd Operator on the other hand creates three CRDs–EtcdBackup, EtcdRestore, and EtcdCluster–to allow users to specify the desired state (size, version, backup policies and restore source) of the etcd clusters.
 
+-   The Operator Framework also provides libraries and tools to streamline the implementation of the **operator's reconciliation logic**, i.e., define custom controllers for operands. This is evidenced by the etcd operator for example, which defines custom controllers for each of it's three CRDs.
 
-- #### Controller Reconciliation Logic
-  The Operator Framework also provides libraries and tools to streamline the implementation of the operator's reconciliation logic. The Prometheus Operator leverages this to define three separate controllers for three Operands: Prometheus, Alertmaanager, and Thanos, while the etcd operator defines separate controllers for all of its operands. These controllers monitor changes to the desired state of the CRDs and update it accordingly.
-
-- #### Operator Lifecycle Manager
-
+-   The **Operator Lifecycle Manager (OLM)** provides the means to bundle, distribute, and manage the operator and its dependencies. The use case for this is very intuitive:
+  - An update of the etcd version is rolled out.
+  - OLM checks CatalogSource, a new ClusterServiceVersion (CSV) is available compared to the current installation.
+  - OLM schedules an upgrade, in a way that does not cause data loss according to the reconciliation logic provided by the etcd maintainers.
 
 
 Source: *The Kubernetes Operator Framework Book* By : Michael Dame
