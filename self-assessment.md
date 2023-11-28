@@ -134,7 +134,7 @@ This self-assessment is created by the Security Pals team to perform an internal
 OpenShift Operator Framework's security.  It is not intended to provide a security audit of Operator Framework, or
 function as an independent assessment or attestment of Operator Framework's security health.
 
-This document serves to provide Operator Framework users with an brief and easily understandable description of OpenShifts's security. Defines where to find existing security documentation. Clearly defines Operator Framework plans for security. Lays out general overview of Operator Framework security practices both for development of Operator Framework as well as security of Operator Framework.
+This document serves to provide Operator Framework users with an brief and easily understandable description of OpenShifts's security. Defines where to find existing security documentation. Clearly explains Operator Framework plans for security. Lays out general overview of Operator Framework security practices both for development of Operator Framework as well as security of Operator Framework.
 
 This document provides the CNCF TAG-Security with an initial understanding of OpenShift
 to assist in a joint-assessment, necessary for projects under incubation.  Taken
@@ -149,16 +149,16 @@ By focusing on the following security-relevant components and features, the Open
 | Component | Applicability | Description of Importance |
 | --------- | ------------- | ------------------------- |
 | Operator SDK | Critical | Ensures the integrity and security of the underlying logic by restricting user modifications. Performs validation checks on the Operator's code, bundle, and catalog to prevent unauthorized changes and uphold the security posture of the Operator. |
-| Operator Lifecycle Manager (OLM) | Critical | Enables users to specify desired states without direct intervention in OLM reconciliation logic. This separation of concerns enhances security by reducing the risk of user errors or malicious attempts to interfere with the reconciliation process.| 
+| Operator Lifecycle Manager (OLM) | Critical | Enables users to specify desired states without direct intervention in OLM resolution logic. This separation of concerns enhances security by reducing the risk of user errors or malicious attempts to interfere with the reconciliation process.| 
 | Operator Registry | Relevant | Automates the generation of manifests and indexes while restricting user access to modification of critical manifest generation/indexing logic. Implements validation checks on Operator bundles, ensuring error-free installations/updates and bolstering overall security. | 
 
 
 ### Security Measures for OpenShift Operator Framework
 | Security Aspect | Importance | Description of Importance |
 | --------------- | ---------- | ------------------------- |
-| Depolyment Configurations and Settings | High | Limited access to critical components fortifies security. Threat modeling includes potential attacks on communication channels, unauthorized data access in YAML configurations, and tampering attempts with Operator logic or registry contents.|
+| Depolyment Configurations and Settings | High | Limited access to critical components fortifies security. Threat modeling includes potential attacks on communication channels, unauthorized data access, and tampering attempts with Operator logic or registry contents.|
 | Access Controls and Validation Checks | High | Enforcing strict access controls and robust validation mechanisms prevents bypassing security checks and maintains integrity during the system's lifecycle. |
-| Data Encryption and Masking | High |  Implementing encryption and masking for sensitive information within YAML configurations safeguards data from unauthorized access, bolstering overall system security. |
+| Data Encryption and Masking | High |  Implementing encryption and masking for sensitive information safeguards data from unauthorized access, bolstering overall system security. |
 
 ## Project compliance
 
