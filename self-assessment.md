@@ -114,7 +114,7 @@ Catalog Operator
 6. Watches for resolved InstallPlans and creates resources for them
 7. Watches for subscriptions to Operators in Catalog, and creates InstallPlans for them
 
-![image](https://github.com/Brandonpinos/SecurityPals-Operator-Framework/assets/71077398/2ca592a0-f9ca-4595-a578-4a000d9ed19a)
+![image](https://github.com/Brandonpinos/SecurityPals-Operator-Framework/assets/71077398/2c3c208e-db2a-4c88-b8db-02df8f344637)
 
 
 ### Goals
