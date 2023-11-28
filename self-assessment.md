@@ -144,7 +144,6 @@ to assist in a joint-assessment, necessary for projects under incubation.  Taken
 together, this document and the joint-assessment serve as a cornerstone for if and when
 Security Pals seeks graduation and is preparing for a security audit.
 
-## Security functions and features
 
 ## Security functions and features
 | Component | Applicability | Description of Importance |
