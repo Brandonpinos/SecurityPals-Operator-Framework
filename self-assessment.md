@@ -39,7 +39,7 @@ A table at the top for quick reference information, later used for indexing.
 | Software | [Operator Framework](https://github.com/operator-framework/operator-sdk)  |
 | Security Provider | No  |
 | Languages | Go, Ansible, Python, C++ |
-| SBOM | [git](https://git-scm.com/downloads), [go.mod](https://github.com/operator-framework/operator-sdk/blob/master/go.mod), [go.sum](https://github.com/operator-framework/operator-sdk/blob/master/go.sum), [Kubernetes](https://github.com/kubernetes/kubernetes), |
+| SBOM | [git](https://git-scm.com/downloads), [go.mod](https://github.com/operator-framework/operator-sdk/blob/master/go.mod), [go.sum](https://github.com/operator-framework/operator-sdk/blob/master/go.sum), [Kubernetes](https://github.com/kubernetes/kubernetes) |
 | | |
 
 ### Security links
