@@ -167,18 +167,26 @@ Not applicable.
 ## Secure development practices
 
 ### Development Pipeline
+Operator SDK and Operator Lifecyle Manager do not inherently managa and consumer user data. They are tools focused on managing Operators and applications in Kubernetes clusters. The respoinsibility for maintaining security and protection of user data falls onto the Operator creators and the users who use them. The Operator creators should always be using the Kubernetes Best Pratices listed further below. Similarly, users should always perform research beforehand to ensure the validity of the Operator and take measures towards protecting their own user data.
+
 All Code is maintained in [Github](https://github.com/operator-framework) and changes are reviewed by maintainers
 * The Source Code is visible in the Github
 * Changes are submitted through Pull Requests
 * Pull Requests automatically have checks performed
 * Pull Requests are reviewed by maintainers
 * Merges are performed after passing checks and review by maintainer
+  
 
-Operators employ several techniques that ensure their security and integrity
+Operators employ several techniques that ensure their security and integrity, most following the Kubernetes Best Practices
+* Using Trusted Base images for building containers
 * Operators follow the principle of least privilege, ensuring that they only access the necessary resources with the least amount of permissions
 * Operators use secure communication channels such as SSH between various components to prevent eavesdropping or mishandling of information
 * Operators should employ a Role Based Access System to ensure that only the authorized users and services are allowed to perform actions in the Operator's lifecycle
 * Operators are expected to use Kubernetes Secrets objects rather than hardcoding for sensitive data
+* Regularly updating dependencies
+
+Outside libraries and dependencies are security ensured through the help of users opening issues and communitity keeping them updated
+  
 
 ### Communication Channels
 
