@@ -252,10 +252,11 @@ Examples of some known security issues include:
 The project has [not been documented](https://www.bestpractices.dev/en/projects) to have achieved the passing level criteria for CII best practices.
 
 However, we have evaluated the project's current state of compliance in the file titled [CII Best Practices.md](https://github.com/Brandonpinos/SecurityPals-Operator-Framework/blob/main/CII%20Best%20Practices.md). The criteria has been taken from this [draft](https://github.com/zeb209/cii-best-practices-badge/blob/master/doc/criteria.md#test) of the CII Best Practices. The summary is provided below:
-1) **OSS Project Basics:** The Operator framework meets all of the compliance criterias, such as having a public website, using HTTPS and proper licensing.
-2) **Change Control:** The version control requirements like tracking changes and the usage of distributed version control systems are met.
-3) **Reporting:** The project provides a bug/vulnerability reporting process, uses an issue tracker and has a public archive for reports.
-4) **Quality:** It is unclear whether the project meets the need for static and dynamic code analysis for addressing vulnerabilities. Clearer documentation needed.
+ - **Open Source Software Project Fundamentals**: The Operator Framework complies with all fundamental criteria for open-source software projects, including the provision of a public website with a stable URL, the utilization of HTTPS for secure communication, and adherence to appropriate licensing requirements.
+ - **Change Management**: The framework employs a publicly accessible, version-controlled source repository that meticulously records changes. It also embraces distributed version control systems, which is consistent with established best practices.
+ - **Issue Reporting Mechanisms**: The project has established comprehensive mechanisms for reporting bugs and vulnerabilities. This includes the use of an issue tracker and the maintenance of a publicly accessible archive for reports, thereby ensuring transparency and accountability.
+ - **Code Quality Assurance**: The current documentation does not conclusively indicate whether the project fulfills the criteria for static and dynamic code analysis to address vulnerabilities. Enhanced documentation is required to ascertain compliance in this area.
+
 
 ### Case Studies
 
