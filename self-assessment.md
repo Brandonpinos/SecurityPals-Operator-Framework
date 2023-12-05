@@ -236,7 +236,7 @@ The specific details about the timings of the meetings and communication channel
 
 ### Known Issues Over Time
 
-All reported bugs, issues, and fixes can be viewed from [operator-framework/operator-sdk/issues repository](https://github.com/operator-framework/operator-sdk/issues). Security vulnerabilities are usually assigned a CVE number to them. All security issues can be tracked [here](https://github.com/operator-framework/operator-sdk/issues?q=CVE+in%3Atitle)
+All reported bugs, issues, and fixes can be viewed from [operator-framework/operator-sdk/issues repository](https://github.com/operator-framework/operator-sdk/issues). Security vulnerabilities are usually assigned a CVE number to them. All security issues can be tracked [here](https://github.com/operator-framework/operator-sdk/issues?q=CVE+in%3Atitle). A ```security relevant``` tag should be added to security related issues to ease querying, currently this label is absent.
 
 Examples of some known security issues include:
 - **upgrade mongo-go-driver for CVE-2021-20329 [#6450](https://github.com/operator-framework/operator-sdk/issues/6450)** This is a case where the operator-sdk was using a version of mongo-go-driver in which a vulnerability was found
@@ -250,6 +250,12 @@ Examples of some known security issues include:
 ### CII Best Practices
 
 The project has [not been documented](https://www.bestpractices.dev/en/projects) to have achieved the passing level criteria for CII best practices.
+
+However, we have evaluated the project's current state of compliance in the file titled [CII Best Practices.md](https://github.com/Brandonpinos/SecurityPals-Operator-Framework/blob/main/CII%20Best%20Practices.md). The criteria has been taken from this [draft](https://github.com/zeb209/cii-best-practices-badge/blob/master/doc/criteria.md#test) of the CII Best Practices. The summary is provided below:
+1) **OSS Project Basics:** The Operator framework meets all of the compliance criterias, such as having a public website, using HTTPS and proper licensing.
+2) **Change Control:** The version control requirements like tracking changes and the usage of distributed version control systems are met.
+3) **Reporting:** The project provides a bug/vulnerability reporting process, uses an issue tracker and has a public archive for reports.
+4) **Quality:** It is unclear whether the project meets the need for static and dynamic code analysis for addressing vulnerabilities. Clearer documentation needed.
 
 ### Case Studies
 
