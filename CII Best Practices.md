@@ -49,7 +49,7 @@ Legend:
 - ✅ Compliance - The criterion is met.
 - ❌ Non-Compliance - The criterion is not met.
 
-**Notes:** The Operator Framework has a public version-controlled source repository on GitHub, which tracks changes including who made the changes and when. It includes interim versions for review between releases¹¹ and uses Git, a common distributed version control system. The project maintains unique version numbers for each release and suggests using Semantic Versioning. Releases are identified within the version control system, likely using Git tags. A ChangeLog is provided, documenting major changes in each release, and it identifies fixes for known vulnerabilities.
+**Notes:** The Operator Framework has a public version-controlled source repository on GitHub, which tracks changes including who made the changes and when. It includes interim versions for review between releases and uses Git, a common distributed version control system. The project maintains unique version numbers for each release and suggests using Semantic Versioning. Releases are identified within the version control system, likely using Git tags. A ChangeLog is provided, documenting major changes in each release, and it identifies fixes for known vulnerabilities.
 
 ##### Reporting
 
