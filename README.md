@@ -10,3 +10,6 @@ Operators, in this context, could be viewed as custom controllers as the provide
 
 ## Assignment 3 Part 1
 The task assigned here is to create the first draft of a Security Self Assessment.
+
+## Assignment 3 Part 2 
+Refine and finalize the document after initaiating discussions with project maintainers. Begin considering action items in potentially opening up a git hub issue
