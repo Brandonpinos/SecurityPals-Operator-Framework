@@ -231,6 +231,11 @@ Following a release, there is a [grooming meeting](https://github.com/operator-f
 * Issues labeled as priority/important-soon
 * Issues in other milestones/backlog if specifically requested
 
+### Addressing Threats and Vulnerabilities 
+In the event of a security breach, depending on how critical the common vulnerabilities and exposures (CVE) is, the community works on opening relevant pull requests to address the vulnerability in the respective repositories. 
+
+The Operator SDK repository contains a collection of addressed CVE issues. Shown [here](https://github.com/operator-framework/operator-sdk/issues?q=is%3Aissue+CVE+is%3Aclosed)
+
 ### Operator SDK response team
 * Austin Macdonald (**[@asmacdo](https://github.com/asmacdo)**), Red Hat
 * Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**), IBM
