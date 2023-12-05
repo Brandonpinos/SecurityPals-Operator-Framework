@@ -175,17 +175,25 @@ All Code is maintained in [Github](https://github.com/operator-framework) and ch
 * Pull Requests automatically have checks performed
 * Pull Requests are reviewed by maintainers
 * Merges are performed after passing checks and review by maintainer
+* Continuous integration and continuous deployment allows code to be automatically built, tested and deployed with each committed change, this is executed through Github Actions
+* Backup and recovery is ensured using the version control aspect of a Github repository
+
   
 
 Operators employ several techniques that ensure their security and integrity, most following the Kubernetes Best Practices
 * Using Trusted Base images for building containers
+* Limiting permissions to the minimum required
 * Operators follow the principle of least privilege, ensuring that they only access the necessary resources with the least amount of permissions
 * Operators use secure communication channels such as SSH between various components to prevent eavesdropping or mishandling of information
-* Operators should employ a Role Based Access System to ensure that only the authorized users and services are allowed to perform actions in the Operator's lifecycle
+* Operators should employ a Role Based Access Control (RBAC) System to ensure that only the authorized users and services are allowed to perform actions in the Operator's lifecycle
 * Operators are expected to use Kubernetes Secrets objects rather than hardcoding for sensitive data
 * Regularly updating dependencies
+* Training and awareness of users and maintainers
+* Avoiding granting root privileges
+* Configuring security contexts and monitoring logging
 
-Outside libraries and dependencies are security ensured through the help of users opening issues and communitity keeping them updated
+
+Outside libraries and dependencies are security ensured through the help of users opening issues and communitity keeping them updated. Further information can be found in [best practices](https://sdk.operatorframework.io/docs/best-practices/)
   
 
 ### Communication Channels
